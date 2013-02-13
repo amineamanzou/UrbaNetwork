@@ -1,0 +1,7 @@
+parameters:
+#    urbanet_user.example.class: Urbanet\UserBundle\Example
+
+services:
+#    urbanet_user.example:
+#        class: %urbanet_user.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
