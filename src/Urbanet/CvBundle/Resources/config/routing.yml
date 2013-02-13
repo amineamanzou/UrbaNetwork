@@ -1,0 +1,3 @@
+urbanet_cv_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: UrbanetCvBundle:Default:index }

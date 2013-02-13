@@ -1,0 +1,7 @@
+parameters:
+#    urbanet_cv.example.class: Urbanet\CvBundle\Example
+
+services:
+#    urbanet_cv.example:
+#        class: %urbanet_cv.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

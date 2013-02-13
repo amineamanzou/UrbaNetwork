@@ -1,3 +1,7 @@
+urbanet_cv:
+    resource: "@UrbanetCvBundle/Resources/config/routing.yml"
+    prefix:   /
+
 urbanet_main:
     resource: "@UrbanetMainBundle/Resources/config/routing.yml"
     prefix:   /
