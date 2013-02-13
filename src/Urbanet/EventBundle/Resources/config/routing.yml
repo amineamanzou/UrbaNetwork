@@ -1,0 +1,3 @@
+urbanet_event_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: UrbanetEventBundle:Default:index }

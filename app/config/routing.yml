@@ -1,3 +1,7 @@
+urbanet_event:
+    resource: "@UrbanetEventBundle/Resources/config/routing.yml"
+    prefix:   /
+
 urbanet_cv:
     resource: "@UrbanetCvBundle/Resources/config/routing.yml"
     prefix:   /
