@@ -29,7 +29,13 @@ class AppKernel extends Kernel
             new Sonata\AdminBundle\SonataAdminBundle(),
             new Sonata\IntlBundle\SonataIntlBundle(),
             
+            new Knp\Bundle\MenuBundle\KnpMenuBundle(),
+            new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
+            new Sonata\UserBundle\SonataUserBundle('FOSUserBundle'),
+            
             new Urbanet\UserBundle\UrbanetUserBundle(),
+            new Application\Sonata\UserBundle\ApplicationSonataUserBundle(),
+            
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

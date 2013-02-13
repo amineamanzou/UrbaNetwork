@@ -1,7 +1,13 @@
+#The bundles developped in this project
 urbanet_user:
     resource: "@UrbanetUserBundle/Resources/config/routing.yml"
     prefix:   /
 
+
+#SonataUserBundle Link between FOSUser and SonataAdmin
+sonata_user:
+    resource: '@SonataUserBundle/Resources/config/routing/admin_security.xml'
+    prefix: /admin
 
 admin:
     resource: '@SonataAdminBundle/Resources/config/routing/sonata_admin.xml'
@@ -12,7 +18,7 @@ _sonata_admin:
     type: sonata_admin
     prefix: /admin
 
-
+#FosUserBundle
 fos_user_security:
     resource: "@FOSUserBundle/Resources/config/routing/security.xml"
  

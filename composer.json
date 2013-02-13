@@ -20,16 +20,20 @@
         "jms/di-extra-bundle": "1.1.*",
         "kriswallsmith/assetic": "1.1.*@dev",
         
-        "friendsofsymfony/user-bundle": "*",
+        "friendsofsymfony/user-bundle": "dev-master",
         
         "sonata-project/jquery-bundle": "dev-master",
         "sonata-project/block-bundle": "dev-master",
         "sonata-project/admin-bundle": "dev-master",
-        
         "sonata-project/cache-bundle": "dev-master",
         "sonata-project/doctrine-orm-admin-bundle": "dev-master",
         "sonata-project/easy-extends-bundle" : "dev-master",
-        "sonata-project/intl-bundle": "dev-master"
+        "sonata-project/intl-bundle": "dev-master",
+
+        "sonata-project/google-authenticator": "dev-master",
+        "sonata-project/doctrine-extensions": "dev-master",
+        "sonata-project/user-bundle": "dev-master"
+
     },
     "scripts": {
         "post-install-cmd": [
