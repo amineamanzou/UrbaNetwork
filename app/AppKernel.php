@@ -41,6 +41,7 @@ class AppKernel extends Kernel
             new Urbanet\MainBundle\UrbanetMainBundle(),
             new Urbanet\CvBundle\UrbanetCvBundle(),
             new Urbanet\EventBundle\UrbanetEventBundle(),
+            new Urbanet\AnnonceBundle\UrbanetAnnonceBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

@@ -1,3 +1,7 @@
+urbanet_annonce:
+    resource: "@UrbanetAnnonceBundle/Resources/config/routing.yml"
+    prefix:   /
+
 urbanet_event:
     resource: "@UrbanetEventBundle/Resources/config/routing.yml"
     prefix:   /
