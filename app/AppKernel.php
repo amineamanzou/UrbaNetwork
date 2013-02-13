@@ -38,6 +38,7 @@ class AppKernel extends Kernel
             
             new Sonata\MediaBundle\SonataMediaBundle(),
             new Application\Sonata\MediaBundle\ApplicationSonataMediaBundle(),
+            new Urbanet\MainBundle\UrbanetMainBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

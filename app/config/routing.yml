@@ -1,3 +1,7 @@
+urbanet_main:
+    resource: "@UrbanetMainBundle/Resources/config/routing.yml"
+    prefix:   /
+
 #The bundles developped in this project
 urbanet_user:
     resource: "@UrbanetUserBundle/Resources/config/routing.yml"
