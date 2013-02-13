@@ -55,6 +55,30 @@ doctrine:
                 auto_mapping: true
                 mappings:
                     FOSUserBundle: ~
+                    SonataUserBundle: ~
+                    ApplicationSonataUserBundle: ~
+
+# SonataUser Configuration               
+sonata_user:
+    security_acl:     false
+    class:
+        user:         Urbanet\UserBundle\Entity\User
+    admin:                  # Admin Classes
+        user:
+            class:          Sonata\UserBundle\Admin\Entity\UserAdmin
+            controller:     SonataAdminBundle:CRUD
+            translation:    SonataUserBundle
+ 
+        group:
+            class:          Sonata\UserBundle\Admin\Entity\GroupAdmin
+            controller:     SonataAdminBundle:CRUD
+            translation:    SonataUserBundle
+    profile:  # Profile Form (firstname, lastname, etc ...)
+        form:
+            type:               sonata_user_profile
+            handler:            sonata.user.profile.form.handler.default
+            name:               sonata_user_profile_form
+            validation_groups:  [Profile]
 
 # Swiftmailer Configuration
 swiftmailer:
@@ -64,6 +88,7 @@ swiftmailer:
     password:  "%mailer_password%"
     spool:     { type: memory }
 
+# FosUser Configuration
 fos_user:
     db_driver: orm
     firewall_name: main
@@ -71,10 +96,11 @@ fos_user:
     profile:  # Authentication Form
         form:
             type:               fos_user_profile
-            handler:            fos_user.profile.form.handler.default
+            #handler:            fos_user.profile.form.handler.default
             name:               fos_user_profile_form
             #validation_groups:  [Authentication] # Please note : this is not the default value
 
+# SonataAdmin Configuration
 sonata_admin:
     title:      Tech News Admin Panel !
     templates:
@@ -89,7 +115,8 @@ sonata_admin:
         history: SonataAdminBundle:CRUD:history.html.twig
         preview: SonataAdminBundle:CRUD:preview.html.twig
         delete:  SonataAdminBundle:CRUD:delete.html.twig
- 
+
+# SonataBlock Configuration
 sonata_block:
     default_contexts: [cms]
     blocks:
