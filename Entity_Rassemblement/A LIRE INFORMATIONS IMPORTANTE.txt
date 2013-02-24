@@ -1,0 +1,41 @@
+
+Dans le dossier Enity sont regroupé l'ensemble des entity.
+Ci-dessous sont regroupé l'ensemble des relations entres ces entity: 
+
+
+
+Relation One_To_One
+
+Artiste -> Mediathèque
+Artiste -> CVArt
+Crew    -> CVCrew
+Membre  -> Annonceur
+Membre  -> Artiste
+
+
+
+
+Relation Many_To_One
+
+CatPub  -> Annonce
+Annonce -> Membre
+
+
+
+Relation Many_To_Many
+
+Annonce -> Tag
+Artiste -> Discipline
+CVArt   -> Spectacle
+CVArt   -> Formation
+Mediatheque -> Video
+
+
+
+Relation Classe Association
+
+Annonce -> Estimer -> Competence
+Artiste -> Appartient -> Crew
+CVArt -> Classement -> Competicion
+CVArt   -> Evaluer -> Competence
+Artiste -> Appartient -> Crew
