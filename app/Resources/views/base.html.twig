@@ -1,13 +1,29 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8" />
+        <title>{% block title %}UrbaNetwork | Être connu c'est cool se faire connaître c'est mieux.{% endblock %}</title>
+        {% block stylesheets %}
+            {% stylesheets '%kernel.root_dir%/../vendor/twitter/bootstrap/less/bootstrap.less' %}
+                <link rel="stylesheet" href="{{ asset_url }}" media="screen" />
+            {% endstylesheets %}
+        {% endblock %}
     </head>
     <body>
+        {% block header%}
+            {% include 'UrbanetMainBundle:Config:header.html.twig' %}
+        {% endblock %}
+        <hr>
         {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        <hr>
+        {% block footer %}
+            {% include 'UrbanetMainBundle:Config:footer.html.twig' %}
+        {% endblock %}
+        {% block javascripts %}
+            {% javascripts  '%kernel.root_dir%/../vendor/twitter/bootstrap/docs/assets/js/bootstrap.js'
+                            '%kernel.root_dir%/../vendor/twitter/bootstrap/docs/assets/js/jquery.js' %}
+                   <script src="{{ asset_url }}" type="text/javascript"></script>
+            {% endjavascripts %}
+        {% endblock %}
     </body>
 </html>
