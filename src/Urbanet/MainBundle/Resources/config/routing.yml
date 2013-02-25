@@ -1,3 +1,19 @@
 urbanet_main_homepage:
-    pattern:  /hello/{name}
+    pattern:  /
     defaults: { _controller: UrbanetMainBundle:Default:index }
+    
+urbanet_main_recherche:
+    pattern:  /Recherche
+    defaults: { _controller: UrbanetMainBundle:Default:recherche }
+
+urbanet_main_apropos:
+    pattern:  /Compagnie/A-Propos
+    defaults: { _controller: UrbanetMainBundle:Compagnie:apropos }
+ 
+urbanet_main_suggestion:
+    pattern:  /Compagnie/suggestion
+    defaults: { _controller: UrbanetMainBundle:Compagnie:suggestion }
+    
+urbanet_main_contact:
+    pattern:  /Compagnie/contact
+    defaults: { _controller: UrbanetMainBundle:Compagnie:contact }

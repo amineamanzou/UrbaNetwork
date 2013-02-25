@@ -1,3 +1,7 @@
 urbanet_annonce_homepage:
-    pattern:  /hello/{name}
+    pattern:  /Annonces
     defaults: { _controller: UrbanetAnnonceBundle:Default:index }
+
+urbanet_annonce_nosannonceurs:
+    pattern:  /Annonces/Nos-Annonceurs
+    defaults: { _controller: UrbanetAnnonceBundle:Default:nosannonceurs }

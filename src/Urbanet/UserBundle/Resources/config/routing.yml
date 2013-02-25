@@ -1,3 +1,7 @@
 urbanet_user_homepage:
-    pattern:  /hello/{name}
+    pattern:  /Artiste
     defaults: { _controller: UrbanetUserBundle:Default:index }
+
+urbanet_user_nosartistes:
+    pattern:  /Artistes/Nos-Artistes
+    defaults: { _controller: UrbanetUserBundle:Default:nosartistes }
