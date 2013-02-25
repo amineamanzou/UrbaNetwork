@@ -1,0 +1,23 @@
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        
+        <a class="brand" href="{{ path('urbanet_main_homepage') }}">UrbaNetwork</a>
+        
+        <ul class="nav pull-left">
+            <li class="active">
+                <a href="{{ path('urbanet_main_homepage') }}">Acceuil</a>
+            </li>
+            <li><a href="{{ path('urbanet_user_nosartistes') }}">Découvrez nos artistes</a></li>
+            <li><a href="{{ path('urbanet_annonce_nosannonceurs') }}">Découvrez nos annonceurs</a></li> 
+        </ul>
+        
+        <ul class="nav pull-right">
+            <form class="navbar-search" action="{{ path('urbanet_main_recherche') }}">
+                <input class="search-query span4" type="text" placeholder="Rechercher Annonce"></input>
+            </form>
+            <li class="divider-vertical"></li>
+            <li><a href="{{ path('urbanet_main_contact') }}">Contact</a></li>
+        </ul>
+        
+    </div>
+ </div>

@@ -1,0 +1,71 @@
+{% extends "::base.html.twig" %}
+
+{% block body %}
+
+<div class="container">
+    <div class="content">
+        
+        <div class="row">
+            
+            <div class="hero-unit">
+                <h1>Restons en contact !</h1>
+                <p class="tagline">
+                    Merci d'avoir visité notre site web. Si vous voulez contacter notre équipe n'hésitez pas à remplir le formulaire si dessous.
+                </p>  
+            </div><!--end hero unit -->
+            
+            <section class="span6">
+                <form>
+                    <div class="control-group">
+                        <label class="control-label" for="inputEmail"><i class="icon-user"></i> Nom et Prénom</label>
+                        <div class="controls controls-row">
+                            <input type="text" class="input-xxlarge" id="inputEmail" placeholder="Personne Cool">
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label" for="inputEmail"><i class="icon-envelope"></i> Email</label>
+                        <div class="controls">
+                            <input type="text" class="input-xxlarge" id="inputEmail" placeholder="nomprenom@exemple.com">
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label" for="inputEmail"><i class="icon-question-sign"></i> Objet</label>
+                        <div class="controls">
+                            <input type="text" class="input-xxlarge" id="inputSubject" placeholder="Comment allez vous ?">
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label" for="inputEmail"><i class="icon-pencil"></i> Message</label>
+                        <div class="controls">
+                            <textarea rows="6" class="input-xxlarge" placeholder=""></textarea>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <div class="controls">
+                            <button type="submit" class="btn btn-success"> Envoyer </button>
+                        </div>
+                    </div>
+                </form>
+                <br class="clear">
+            </section><!-- end left -->
+
+            <section class="span6">
+                <div class="well">
+                    <iframe width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" 
+                            src="https://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=new+york+city&aq=&sll=37.6,-95.665&sspn=80.867771,100.263672&t=m&ie=UTF8&hq=&hnear=Fontainebleau&z=11&iwloc=A&output=embed">
+                    </iframe>
+                </div><!--end well -->
+            </section><!--end right -->
+            
+      </div><!--end row -->
+
+      <hr>
+      
+    </div>
+</div>
+
+{% endblock %}

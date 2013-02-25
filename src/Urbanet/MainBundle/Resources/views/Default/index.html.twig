@@ -1,1 +1,41 @@
-Hello {{ name }}!
+{% extends "::base.html.twig" %}
+
+{% block body %}
+
+<div class="container">
+    <form class="form-signin">
+        <h2 class="form-signin-heading">Please sign in</h2>
+        <input type="text" class="input-block-level" placeholder="Email address">
+        <input type="password" class="input-block-level" placeholder="Password">
+        <label class="checkbox">
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>
+        <button class="btn btn-large btn-primary" type="submit">Sign in</button>
+    </form>
+        
+        <article>
+    <header>
+        <div class="row-fluid">
+            <div class="span6">
+            
+                <h2> Section Acceuil </h2>
+
+            </div>
+            <div class="span6">
+                
+            </div>   
+        </div>
+
+    </header>
+    <hr>
+    <div class="content">
+        <blockquote>
+        <p>
+            Page d’accueil regroupant des informations sur le site, une vidéo de promotion et un formulaire de connexion / inscription.
+        </p>
+        </blockquote>
+    </div>
+    </article>
+</div>
+
+{% endblock %}
