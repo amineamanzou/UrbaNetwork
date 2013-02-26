@@ -41,7 +41,7 @@ assetic:
             jar: %kernel.root_dir%/Resources/java/yuicompressor-2.4.7.jar
         yui_js:
             jar: %kernel.root_dir%/Resources/java/yuicompressor-2.4.7.jar
-
+            
 # Doctrine Configuration
 doctrine:
     dbal:
@@ -110,7 +110,7 @@ fos_user:
 
 # SonataAdmin Configuration
 sonata_admin:
-    title:      Tech News Admin Panel !
+    title:      Urbanetwork Administration !
     templates:
         ## default global templates
         layout:  SonataAdminBundle::standard_layout.html.twig

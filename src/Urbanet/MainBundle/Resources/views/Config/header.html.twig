@@ -1,8 +1,13 @@
 <div class="navbar navbar-fixed-top">
-    <div class="navbar-inner">
-        
+    <div class="navbar-inner ">
+        <a class="btn btn-navbar collapsed" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </a>
         <a class="brand" href="{{ path('urbanet_main_homepage') }}">UrbaNetwork</a>
         
+        <div class="nav-collapse collapse navbar-responsive-collapse" />
         <ul class="nav pull-left">
             <li class="active">
                 <a href="{{ path('urbanet_main_homepage') }}">Acceuil</a>
@@ -18,6 +23,6 @@
             <li class="divider-vertical"></li>
             <li><a href="{{ path('urbanet_main_contact') }}">Contact</a></li>
         </ul>
-        
+        </div>
     </div>
  </div>
