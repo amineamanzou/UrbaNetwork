@@ -4,7 +4,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8" />
         <title>{% block title %}UrbaNetwork | Être connu c'est cool se faire connaître c'est mieux.{% endblock %}</title>
         {% block stylesheets %}
-            {% stylesheets '%kernel.root_dir%/../vendor/twitter/bootstrap/less/bootstrap.less' %}
+            {% stylesheets '%kernel.root_dir%/../vendor/twitter/bootstrap/less/bootstrap.less'
+                            '%kernel.root_dir%/../vendor/twitter/bootstrap/less/responsive.less' 
+                            %}
                 <link rel="stylesheet" href="{{ asset_url }}" media="screen" />
             {% endstylesheets %}
         {% endblock %}
@@ -20,10 +22,27 @@
             {% include 'UrbanetMainBundle:Config:footer.html.twig' %}
         {% endblock %}
         {% block javascripts %}
-            {% javascripts  '%kernel.root_dir%/../vendor/twitter/bootstrap/docs/assets/js/bootstrap.js'
-                            '%kernel.root_dir%/../vendor/twitter/bootstrap/docs/assets/js/jquery.js' %}
+            {% javascripts  '%kernel.root_dir%/../vendor/twitter/bootstrap/docs/assets/js/bootstrap.js' 
+                            '%kernel.root_dir%/../vendor/twitter/bootstrap/js/bootstrap-transition.js'
+                            '%kernel.root_dir%/../vendor/twitter/bootstrap/js/bootstrap-alert.js'
+                            '%kernel.root_dir%/../vendor/twitter/bootstrap/js/bootstrap-button.js'
+                            '%kernel.root_dir%/../vendor/twitter/bootstrap/js/bootstrap-carousel.js'
+                            '%kernel.root_dir%/../vendor/twitter/bootstrap/js/bootstrap-collapse.js'
+                            '%kernel.root_dir%/../vendor/twitter/bootstrap/js/bootstrap-dropdown.js'
+                            '%kernel.root_dir%/../vendor/twitter/bootstrap/js/bootstrap-modal.js'
+                            '%kernel.root_dir%/../vendor/twitter/bootstrap/js/bootstrap-tooltip.js'
+                            '%kernel.root_dir%/../vendor/twitter/bootstrap/js/bootstrap-popover.js'
+                            '%kernel.root_dir%/../vendor/twitter/bootstrap/js/bootstrap-scrollspy.js'
+                            '%kernel.root_dir%/../vendor/twitter/bootstrap/js/bootstrap-tab.js'
+                            '%kernel.root_dir%/../vendor/twitter/bootstrap/js/bootstrap-typeahead.js'
+                            '%kernel.root_dir%/../vendor/twitter/bootstrap/js/bootstrap-affix.js'
+                             %}
                    <script src="{{ asset_url }}" type="text/javascript"></script>
             {% endjavascripts %}
+            {% javascripts  '%kernel.root_dir%/../vendor/twitter/bootstrap/docs/assets/js/jquery.js' %}
+                   <script src="{{ asset_url }}" type="text/javascript"></script>
+            {% endjavascripts %}
+                   
         {% endblock %}
     </body>
 </html>
