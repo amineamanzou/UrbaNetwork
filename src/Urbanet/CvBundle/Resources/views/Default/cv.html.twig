@@ -1,5 +1,215 @@
 {% extends "::base.html.twig" %}
-
+                                   
 {% block body %}
 
+    <div class="container">
+        <div class="row">
+            <div class="span6">
+                <legend> Mon CV</legend>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="row well">
+        <div class="span2">
+				<img src="{{ asset('images/img-avatar.jpg') }}" class="img-polaroid">
+		</div>
+        <div class="span3"><h2>NOM</h2></br>
+                           <h3>PRENOM</h3></br>
+                           <h4>CREW</h4>    
+        </div>
+        <div class="pull-right"><a href="#"></i>Imprimer cv</a></br>
+                           <a href="#">Télécharger cv</a></li> 
+        </div>  
+    </div>
+     
+    <div class="container well">
+    <div id="glissage">
+        <h3>Informations personnelles</h3>
+        <div id="forms1">
+            <div class="row">
+                <div class="span8">
+                    <form action="" id="infoperso-form" class="form-horizontal">
+                        <fieldset>
+                            <div class="control-group">
+                                <label class="control-label" for="name">société</label>
+                                <div class="controls">
+                                    <input type="text" class="input-large" name="société" id="société">
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <label class="control-label" for="site-web">site internet</label>
+                                <div class="controls">
+                                    <input type="text" class="input-large" name="Site-web" id="Site-web">
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <label class="control-label" for="subject">Lieu</label>
+                                <div class="controls">
+                                    <input type="text" class="input-large" name="Lieu" id="Lieu">
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <label class="control-label" for="message">Déscription</label>
+                                <div class="controls">
+                                    <textarea class="input-xlarge" name="Déscription" id="Description" rows="3"></textarea>
+                                </div>
+                            </div>
+
+
+                            <div class="form-actions">
+                                <button id="valider1" type="submit" class="btn btn-primary btn-mini">Mettre à jour</button>
+                                <button id="return1" class="btn btn-mini">Réinitialiser</button>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <h3>A propos de moi</h3>
+        <div id="forms2">
+            <div class="row">
+                <div class="span8">
+                    <form action="" id="Apdm-form" class="form-horizontal">
+                        <fieldset>
+
+                            <div class="control-group">
+                                <label class="control-label" for="name">société</label>
+                                <div class="controls">
+                                    <input type="text" class="input-large" name="société" id="société">
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <label class="control-label" for="site-web">site internet</label>
+                                <div class="controls">
+                                    <input type="text" class="input-large" name="Site-web" id="Site-web">
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <label class="control-label" for="subject">Lieu</label>
+                                <div class="controls">
+                                    <input type="text" class="input-large" name="Lieu" id="Lieu">
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <label class="control-label" for="message">Déscription</label>
+                                <div class="controls">
+                                    <textarea class="input-xlarge" name="Déscription" id="Description" rows="3"></textarea>
+                                </div>
+                            </div>
+
+
+                            <div class="form-actions">
+                                <button id="valider2" type="submit" class="btn btn-primary btn-mini">Mettre à jour</button>
+                                <button id="return2" class="btn btn-mini">Réinitialiser</button>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+        <h3>Compétences</h3>
+        <div id="forms3">
+            <div class="row">
+                <div class="span8">
+                    <form action="" id="competence-form" class="form-horizontal">
+                        <fieldset>
+
+                            <div class="control-group">
+                                <label class="control-label" for="name">société</label>
+                                <div class="controls">
+                                    <input type="text" class="input-large" name="société" id="société">
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <label class="control-label" for="site-web">site internet</label>
+                                <div class="controls">
+                                    <input type="text" class="input-large" name="Site-web" id="Site-web">
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <label class="control-label" for="subject">Lieu</label>
+                                <div class="controls">
+                                    <input type="text" class="input-large" name="Lieu" id="Lieu">
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <label class="control-label" for="message">Déscription</label>
+                                <div class="controls">
+                                    <textarea class="input-xlarge" name="Déscription" id="Description" rows="3"></textarea>
+                                </div>
+                            </div>
+
+
+                            <div class="form-actions">
+                                <button id="valider3" type="submit" class="btn btn-primary btn-mini">Mettre à jour</button>
+                                <button id="return3" class="btn btn-mini">Réinitialiser</button>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <h3>Expérience professionnelle</h3>
+        <div id="forms4">
+            <div class="row">
+                <div class="span8">
+                    <form action="" id="Exppro-form" class="form-horizontal">
+                        <fieldset>
+
+                            <div class="control-group">
+                                <label class="control-label" for="name">société</label>
+                                <div class="controls">
+                                    <input type="text" class="input-large" name="société" id="société">
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <label class="control-label" for="site-web">site internet</label>
+                                <div class="controls">
+                                    <input type="text" class="input-large" name="Site-web" id="Site-web">
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <label class="control-label" for="Lieu">Lieu</label>
+                                <div class="controls">
+                                    <input type="text" class="input-large" name="Lieu" id="Lieu">
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <label class="control-label" for="description">Déscription</label>
+                                <div class="controls">
+                                    <textarea class="input-xlarge" name="Déscription" id="Description" rows="3"></textarea>
+                                </div>
+                            </div>
+
+
+                            <div class="form-actions">
+                                <button id="valider4" type="submit" class="btn btn-primary btn-mini">Mettre à jour</button>
+                                <button id="return4" class="btn btn-mini">Réinitialiser</button>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    </div>
 {% endblock %}
