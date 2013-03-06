@@ -8,11 +8,18 @@ class DefaultController extends Controller
 {
     public function indexAction()
     {
+
+
+
+
+
+
+
         return $this->render('UrbanetCvBundle:Default:index.html.twig');
     }
     
-    public function cvAction()
+    public function editerAction()
     {
-        return $this->render('UrbanetCvBundle:Default:cv.html.twig');
+        return $this->render('UrbanetCvBundle:Default:editer.html.twig');
     }
 }
