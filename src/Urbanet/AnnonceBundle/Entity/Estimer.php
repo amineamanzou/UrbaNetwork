@@ -1,6 +1,6 @@
 <?php
 
-namespace Training\ArticleBundle\Entity;
+namespace Urbanet\AnnonceBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -8,19 +8,19 @@ use Doctrine\ORM\Mapping as ORM;
  * Estimer
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="Training\ArticleBundle\Entity\EstimerRepository")
+ * @ORM\Entity(repositoryClass="Urbanet\AnnonceBundle\Entity\EstimerRepository")
  */
 class Estimer
 {
     /**
      * @ORM\Id
-     * @ORM\ManyToOne(targetEntity="Training\ArticleBundle\Entity\Annonce")
+     * @ORM\ManyToOne(targetEntity="Urbanet\AnnonceBundle\Entity\Annonce")
      */
     private $Annonce;
 
     /**
      * @ORM\Id
-     * @ORM\ManyToOne(targetEntity="Training\ArticleBundle\Entity\Competence")
+     * @ORM\ManyToOne(targetEntity="Urbanet\CvBundle\Entity\Competence")
      */
     private $Competence;
 
@@ -59,10 +59,10 @@ class Estimer
     /**
      * Set Annonce
      *
-     * @param \Training\ArticleBundle\Entity\Annonce $annonce
+     * @param \Urbanet\AnnonceBundle\Entity\Annonce $annonce
      * @return Estimer
      */
-    public function setAnnonce(\Training\ArticleBundle\Entity\Annonce $annonce)
+    public function setAnnonce(\Urbanet\AnnonceBundle\Entity\Annonce $annonce)
     {
         $this->Annonce = $annonce;
     
@@ -72,7 +72,7 @@ class Estimer
     /**
      * Get Annonce
      *
-     * @return \Training\ArticleBundle\Entity\Annonce 
+     * @return \Urbanet\AnnonceBundle\Entity\Annonce 
      */
     public function getAnnonce()
     {
@@ -82,10 +82,10 @@ class Estimer
     /**
      * Set Competence
      *
-     * @param \Training\ArticleBundle\Entity\Competence $competence
+     * @param \Urbanet\AnnonceBundle\Entity\Competence $competence
      * @return Estimer
      */
-    public function setCompetence(\Training\ArticleBundle\Entity\Competence $competence)
+    public function setCompetence(\Urbanet\AnnonceBundle\Entity\Competence $competence)
     {
         $this->Competence = $competence;
     
@@ -95,7 +95,7 @@ class Estimer
     /**
      * Get Competence
      *
-     * @return \Training\ArticleBundle\Entity\Competence 
+     * @return \Urbanet\AnnonceBundle\Entity\Competence 
      */
     public function getCompetence()
     {
