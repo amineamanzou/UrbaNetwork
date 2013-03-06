@@ -1,6 +1,6 @@
 <?php
 
-namespace Training\ArticleBundle\Entity;
+namespace Urbanet\EventBundle\Entity;
 
 use Doctrine\ORM\EntityRepository;
 

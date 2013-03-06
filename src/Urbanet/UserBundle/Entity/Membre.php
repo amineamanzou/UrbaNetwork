@@ -1,6 +1,6 @@
 <?php
 
-namespace Training\ArticleBundle\Entity;
+namespace Urbanet\UserBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -8,17 +8,17 @@ use Doctrine\ORM\Mapping as ORM;
  * Membre
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="Training\ArticleBundle\Entity\MembreRepository")
+ * @ORM\Entity(repositoryClass="Urbanet\UserBundle\Entity\MembreRepository")
  */
 class Membre
 {
     /**
-     * @ORM\OneToOne(targetEntity="Training\ArticleBundle\Entity\Artiste", cascade={"persist"})
+     * @ORM\OneToOne(targetEntity="Urbanet\UserBundle\Entity\Artiste", cascade={"persist"})
     */
     private $Artiste;
 
     /**
-     * @ORM\OneToOne(targetEntity="Training\ArticleBundle\Entity\Annonceur", cascade={"persist"})
+     * @ORM\OneToOne(targetEntity="Urbanet\UserBundle\Entity\Annonceur", cascade={"persist"})
     */
     private $Annonceur;    
 
@@ -255,10 +255,10 @@ class Membre
     /**
      * Set Artiste
      *
-     * @param \Training\ArticleBundle\Entity\Artiste $artiste
+     * @param \Urbanet\UserBundle\Entity\Artiste $artiste
      * @return Membre
      */
-    public function setArtiste(\Training\ArticleBundle\Entity\Artiste $artiste = null)
+    public function setArtiste(\Urbanet\UserBundle\Entity\Artiste $artiste = null)
     {
         $this->Artiste = $artiste;
     
@@ -268,7 +268,7 @@ class Membre
     /**
      * Get Artiste
      *
-     * @return \Training\ArticleBundle\Entity\Artiste 
+     * @return \Urbanet\UserBundle\Entity\Artiste 
      */
     public function getArtiste()
     {
@@ -278,10 +278,10 @@ class Membre
     /**
      * Set Annonceur
      *
-     * @param \Training\ArticleBundle\Entity\Annonceur $annonceur
+     * @param \Urbanet\UserBundle\Entity\Annonceur $annonceur
      * @return Membre
      */
-    public function setAnnonceur(\Training\ArticleBundle\Entity\Annonceur $annonceur = null)
+    public function setAnnonceur(\Urbanet\UserBundle\Entity\Annonceur $annonceur = null)
     {
         $this->Annonceur = $annonceur;
     
@@ -291,7 +291,7 @@ class Membre
     /**
      * Get Annonceur
      *
-     * @return \Training\ArticleBundle\Entity\Annonceur 
+     * @return \Urbanet\UserBundle\Entity\Annonceur 
      */
     public function getAnnonceur()
     {

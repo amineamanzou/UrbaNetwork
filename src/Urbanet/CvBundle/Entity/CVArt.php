@@ -1,6 +1,6 @@
 <?php
 
-namespace Training\ArticleBundle\Entity;
+namespace Urbanet\CvBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -8,17 +8,17 @@ use Doctrine\ORM\Mapping as ORM;
  * CVArt
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="Training\ArticleBundle\Entity\CVArtRepository")
+ * @ORM\Entity(repositoryClass="Urbanet\CvBundle\Entity\CVArtRepository")
  */
 class CVArt
 {
     /**
-     * @ORM\ManyToMany(targetEntity="Training\ArticleBundle\Entity\Spectacle", cascade={"persist"})
+     * @ORM\ManyToMany(targetEntity="Urbanet\CvBundle\Entity\Spectacle", cascade={"persist"})
      */
     private $Spectacle;
 
     /**
-     * @ORM\ManyToMany(targetEntity="Training\ArticleBundle\Entity\Formation", cascade={"persist"})
+     * @ORM\ManyToMany(targetEntity="Urbanet\CvBundle\Entity\Formation", cascade={"persist"})
      */
     private $Formation;
 
@@ -41,9 +41,9 @@ class CVArt
     /**
      * @var string
      *
-     * @ORM\Column(name="Logo", type="string", length=255)
+     * @ORM\Column(name="Photo", type="string", length=255)
      */
-    private $Logo;
+    private $Photo;
 
 
     /**
@@ -113,10 +113,10 @@ class CVArt
     /**
      * Add Spectacle
      *
-     * @param \Training\ArticleBundle\Entity\Spectacle $spectacle
+     * @param \Urbanet\CvBundle\Entity\Spectacle $spectacle
      * @return CVArt
      */
-    public function addSpectacle(\Training\ArticleBundle\Entity\Spectacle $spectacle)
+    public function addSpectacle(\Urbanet\CvBundle\Entity\Spectacle $spectacle)
     {
         $this->Spectacle[] = $spectacle;
     
@@ -126,9 +126,9 @@ class CVArt
     /**
      * Remove Spectacle
      *
-     * @param \Training\ArticleBundle\Entity\Spectacle $spectacle
+     * @param \Urbanet\CvBundle\Entity\Spectacle $spectacle
      */
-    public function removeSpectacle(\Training\ArticleBundle\Entity\Spectacle $spectacle)
+    public function removeSpectacle(\Urbanet\CvBundle\Entity\Spectacle $spectacle)
     {
         $this->Spectacle->removeElement($spectacle);
     }
@@ -146,10 +146,10 @@ class CVArt
     /**
      * Add Formation
      *
-     * @param \Training\ArticleBundle\Entity\Formation $formation
+     * @param \Urbanet\CvBundle\Entity\Formation $formation
      * @return CVArt
      */
-    public function addFormation(\Training\ArticleBundle\Entity\Formation $formation)
+    public function addFormation(\Urbanet\CvBundle\Entity\Formation $formation)
     {
         $this->Formation[] = $formation;
     
@@ -159,9 +159,9 @@ class CVArt
     /**
      * Remove Formation
      *
-     * @param \Training\ArticleBundle\Entity\Formation $formation
+     * @param \Urbanet\CvBundle\Entity\Formation $formation
      */
-    public function removeFormation(\Training\ArticleBundle\Entity\Formation $formation)
+    public function removeFormation(\Urbanet\CvBundle\Entity\Formation $formation)
     {
         $this->Formation->removeElement($formation);
     }
@@ -174,5 +174,28 @@ class CVArt
     public function getFormation()
     {
         return $this->Formation;
+    }
+
+    /**
+     * Set Photo
+     *
+     * @param string $photo
+     * @return CVArt
+     */
+    public function setPhoto($photo)
+    {
+        $this->Photo = $photo;
+    
+        return $this;
+    }
+
+    /**
+     * Get Photo
+     *
+     * @return string 
+     */
+    public function getPhoto()
+    {
+        return $this->Photo;
     }
 }

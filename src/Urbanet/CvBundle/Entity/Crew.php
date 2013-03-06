@@ -1,6 +1,6 @@
 <?php
 
-namespace Training\ArticleBundle\Entity;
+namespace Urbanet\CvBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -8,12 +8,12 @@ use Doctrine\ORM\Mapping as ORM;
  * Crew
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="Training\ArticleBundle\Entity\CrewRepository")
+ * @ORM\Entity(repositoryClass="Urbanet\CvBundle\Entity\CrewRepository")
  */
 class Crew
 {
     /**
-     * @ORM\OneToOne(targetEntity="Training\ArticleBundle\Entity\CVCrew", cascade={"persist"})
+     * @ORM\OneToOne(targetEntity="Urbanet\CvBundle\Entity\CVCrew", cascade={"persist"})
      */
     private $CVCrew;
 
@@ -100,10 +100,10 @@ class Crew
     /**
      * Set CVCrew
      *
-     * @param \Training\ArticleBundle\Entity\CVCrew $cVCrew
+     * @param \Urbanet\CvBundle\Entity\CVCrew $cVCrew
      * @return Crew
      */
-    public function setCVCrew(\Training\ArticleBundle\Entity\CVCrew $cVCrew = null)
+    public function setCVCrew(\Urbanet\CvBundle\Entity\CVCrew $cVCrew = null)
     {
         $this->CVCrew = $cVCrew;
     
@@ -113,7 +113,7 @@ class Crew
     /**
      * Get CVCrew
      *
-     * @return \Training\ArticleBundle\Entity\CVCrew 
+     * @return \Urbanet\CvBundle\Entity\CVCrew 
      */
     public function getCVCrew()
     {
