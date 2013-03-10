@@ -1,0 +1,21 @@
+{% extends "::base.html.twig" %}
+
+{% block body %}
+
+<p><center><h1>Mon CV</h1></center></p>
+
+<h2>Ajouter des informations à Mon Cv</h2>
+<h4>Information générales</h4>
+<hr>
+
+<div class="container">
+    <form class="form-horizontal" action="{{ path("urbanet_cv_ajouter", { id: id}) }}" method="post">
+        {{ form_widget(form) }}
+    
+    
+            <input class="btn btn-primary" type="submit" value="Ajouter">
+            <input class="btn btn-danger" type="button" value="Effacer">
+    </form>
+</div>
+
+{% endblock %}
