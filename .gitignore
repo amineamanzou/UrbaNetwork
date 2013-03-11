@@ -5,5 +5,8 @@ vendor/*
 web/uploads/*
 web/bundles/*
 
+# MacOS file
+*.DS_Store
+
 #netbeans
 /nbproject/*
