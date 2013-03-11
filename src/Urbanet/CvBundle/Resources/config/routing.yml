@@ -1,3 +1,4 @@
 urbanet_cv_homepage:
     pattern:  /CV
     defaults: { _controller: UrbanetCvBundle:Default:cv }
+
