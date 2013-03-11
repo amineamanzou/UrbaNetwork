@@ -3,7 +3,10 @@
         <div class="span foot"></div>
         <div class="span3 foot">
             <p><a href="">
-                <img src="{{ path('urbanet_main_homepage') }}" alt="Urbanetwork logo"/>
+            {% image '%kernel.root_dir%/../src/Urbanet/MainBundle/Resources/public/images/smallLogo.png' %}
+                <a href="{{ path('urbanet_main_homepage') }}"><img src="{{ asset_url }}" alt="Urbanetwork logo"/></a>
+            {% endimage %}
+                    
             </a></p>
             <p>
             <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US">

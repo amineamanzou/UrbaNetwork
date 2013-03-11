@@ -15,4 +15,5 @@ class DefaultController extends Controller
     {
         return $this->render('UrbanetCvBundle:Default:cv.html.twig');
     }
+    
 }

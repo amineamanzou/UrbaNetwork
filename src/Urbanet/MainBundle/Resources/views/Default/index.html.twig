@@ -3,39 +3,41 @@
 {% block body %}
 
 <div class="container">
-    <form class="form-signin">
-        <h2 class="form-signin-heading">Please sign in</h2>
-        <input type="text" class="input-block-level" placeholder="Email address">
-        <input type="password" class="input-block-level" placeholder="Password">
-        <label class="checkbox">
-          <input type="checkbox" value="remember-me"> Remember me
-        </label>
-        <button class="btn btn-large btn-primary" type="submit">Sign in</button>
-    </form>
-        
-        <article>
-    <header>
-        <div class="row-fluid">
-            <div class="span6">
-            
-                <h2> Section Acceuil </h2>
+    
+    <div class="connection">
+        <form action="{{ path("sonata_user_admin_security_check") }}" method="post">
 
+
+
+            <div class="control-group">
+                <label for="username">{{ 'security.login.username'|trans({}, 'FOSUserBundle') }}</label>
+
+                <div class="controls">
+                    <input type="text" id="username" name="_username" value="" class="big sonata-medium"/>
+                </div>
             </div>
-            <div class="span6">
-                
-            </div>   
-        </div>
 
-    </header>
-    <hr>
-    <div class="content">
-        <blockquote>
-        <p>
-            Page d’accueil regroupant des informations sur le site, une vidéo de promotion et un formulaire de connexion / inscription.
-        </p>
-        </blockquote>
+            <div class="control-group">
+                <label for="password">{{ 'security.login.password'|trans({}, 'FOSUserBundle') }}</label>
+
+                <div class="controls">
+                    <input type="password" id="password" name="_password" class="big sonata-medium" />
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label for="remember_me">
+                    <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+                    {{ 'security.login.remember_me'|trans({}, 'FOSUserBundle') }}
+                </label>
+            </div>
+
+            <div class="form-actions">
+                <input type="submit" class="btn btn-primary" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans({}, 'FOSUserBundle') }}" />
+            </div>
+        </form>
     </div>
-    </article>
+    
 </div>
 
 {% endblock %}
