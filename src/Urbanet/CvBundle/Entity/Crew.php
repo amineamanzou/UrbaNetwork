@@ -1,62 +1,62 @@
 <?php
 
-namespace Training\ArticleBundle\Entity;
+namespace Urbanet\CvBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Crew
- *
- * @ORM\Table()
- * @ORM\Entity(repositoryClass="Training\ArticleBundle\Entity\CrewRepository")
- */
+* Crew
+*
+* @ORM\Table()
+* @ORM\Entity(repositoryClass="Urbanet\CvBundle\Entity\CrewRepository")
+*/
 class Crew
 {
     /**
-     * @ORM\OneToOne(targetEntity="Training\ArticleBundle\Entity\CVCrew", cascade={"persist"})
-     */
+* @ORM\OneToOne(targetEntity="Urbanet\CvBundle\Entity\CVCrew", cascade={"persist"})
+*/
     private $CVCrew;
 
     /**
-     * @var integer
-     *
-     * @ORM\Column(name="id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
-     */
+* @var integer
+*
+* @ORM\Column(name="id", type="integer")
+* @ORM\Id
+* @ORM\GeneratedValue(strategy="AUTO")
+*/
     private $id;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="Nom", type="string", length=255)
-     */
+* @var string
+*
+* @ORM\Column(name="Nom", type="string", length=255)
+*/
     private $Nom;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="Logo", type="string", length=255)
-     */
+* @var string
+*
+* @ORM\Column(name="Logo", type="string", length=255)
+*/
     private $Logo;
 
 
     /**
-     * Get id
-     *
-     * @return integer 
-     */
+* Get id
+*
+* @return integer
+*/
     public function getId()
     {
         return $this->id;
     }
 
     /**
-     * Set Nom
-     *
-     * @param string $nom
-     * @return Crew
-     */
+* Set Nom
+*
+* @param string $nom
+* @return Crew
+*/
     public function setNom($nom)
     {
         $this->Nom = $nom;
@@ -65,21 +65,21 @@ class Crew
     }
 
     /**
-     * Get Nom
-     *
-     * @return string 
-     */
+* Get Nom
+*
+* @return string
+*/
     public function getNom()
     {
         return $this->Nom;
     }
 
     /**
-     * Set Logo
-     *
-     * @param string $logo
-     * @return Crew
-     */
+* Set Logo
+*
+* @param string $logo
+* @return Crew
+*/
     public function setLogo($logo)
     {
         $this->Logo = $logo;
@@ -88,22 +88,22 @@ class Crew
     }
 
     /**
-     * Get Logo
-     *
-     * @return string 
-     */
+* Get Logo
+*
+* @return string
+*/
     public function getLogo()
     {
         return $this->Logo;
     }
 
     /**
-     * Set CVCrew
-     *
-     * @param \Training\ArticleBundle\Entity\CVCrew $cVCrew
-     * @return Crew
-     */
-    public function setCVCrew(\Training\ArticleBundle\Entity\CVCrew $cVCrew = null)
+* Set CVCrew
+*
+* @param \Urbanet\CvBundle\Entity\CVCrew $cVCrew
+* @return Crew
+*/
+    public function setCVCrew(\Urbanet\CvBundle\Entity\CVCrew $cVCrew = null)
     {
         $this->CVCrew = $cVCrew;
     
@@ -111,10 +111,10 @@ class Crew
     }
 
     /**
-     * Get CVCrew
-     *
-     * @return \Training\ArticleBundle\Entity\CVCrew 
-     */
+* Get CVCrew
+*
+* @return \Urbanet\CvBundle\Entity\CVCrew
+*/
     public function getCVCrew()
     {
         return $this->CVCrew;
