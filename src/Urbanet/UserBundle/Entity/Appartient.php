@@ -1,53 +1,53 @@
 <?php
 
-namespace Urbanet\UserBundle\Entity;
+namespace Training\ArticleBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
-* Appartient
-*
-* @ORM\Table()
-* @ORM\Entity(repositoryClass="Urbanet\UserBundle\Entity\AppartientRepository")
-*/
+ * Appartient
+ *
+ * @ORM\Table()
+ * @ORM\Entity(repositoryClass="Training\ArticleBundle\Entity\AppartientRepository")
+ */
 class Appartient
 {
     /**
-* @ORM\Id
-* @ORM\ManyToOne(targetEntity="Urbanet\UserBundle\Entity\Artiste")
-*/
+     * @ORM\Id
+     * @ORM\ManyToOne(targetEntity="Training\ArticleBundle\Entity\Artiste")
+     */
     private $Artiste;
 
     /**
-* @ORM\Id
-* @ORM\ManyToOne(targetEntity="Urbanet\CvBundle\Entity\Crew")
-*/
+     * @ORM\Id
+     * @ORM\ManyToOne(targetEntity="Training\ArticleBundle\Entity\Crew")
+     */
     private $Crew;
 
 
     /**
-* @var string
-*
-* @ORM\Column(name="Fonction", type="string", length=255)
-*/
+     * @var string
+     *
+     * @ORM\Column(name="Fonction", type="string", length=255)
+     */
     private $Fonction;
 
     /**
-* @var string
-*
-* @ORM\Column(name="Droit", type="string", length=255)
-*/
+     * @var string
+     *
+     * @ORM\Column(name="Droit", type="string", length=255)
+     */
     private $Droit;
 
 
 
 
     /**
-* Set Fonction
-*
-* @param string $fonction
-* @return Appartient
-*/
+     * Set Fonction
+     *
+     * @param string $fonction
+     * @return Appartient
+     */
     public function setFonction($fonction)
     {
         $this->Fonction = $fonction;
@@ -56,21 +56,21 @@ class Appartient
     }
 
     /**
-* Get Fonction
-*
-* @return string
-*/
+     * Get Fonction
+     *
+     * @return string 
+     */
     public function getFonction()
     {
         return $this->Fonction;
     }
 
     /**
-* Set Droit
-*
-* @param string $droit
-* @return Appartient
-*/
+     * Set Droit
+     *
+     * @param string $droit
+     * @return Appartient
+     */
     public function setDroit($droit)
     {
         $this->Droit = $droit;
@@ -79,22 +79,22 @@ class Appartient
     }
 
     /**
-* Get Droit
-*
-* @return string
-*/
+     * Get Droit
+     *
+     * @return string 
+     */
     public function getDroit()
     {
         return $this->Droit;
     }
 
     /**
-* Set Artiste
-*
-* @param \Urbanet\UserBundle\Entity\Artiste $artiste
-* @return Appartient
-*/
-    public function setArtiste(\Urbanet\UserBundle\Entity\Artiste $artiste)
+     * Set Artiste
+     *
+     * @param \Training\ArticleBundle\Entity\Artiste $artiste
+     * @return Appartient
+     */
+    public function setArtiste(\Training\ArticleBundle\Entity\Artiste $artiste)
     {
         $this->Artiste = $artiste;
     
@@ -102,22 +102,22 @@ class Appartient
     }
 
     /**
-* Get Artiste
-*
-* @return \Urbanet\UserBundle\Entity\Artiste
-*/
+     * Get Artiste
+     *
+     * @return \Training\ArticleBundle\Entity\Artiste 
+     */
     public function getArtiste()
     {
         return $this->Artiste;
     }
 
     /**
-* Set Crew
-*
-* @param \Urbanet\UserBundle\Entity\Crew $crew
-* @return Appartient
-*/
-    public function setCrew(\Urbanet\UserBundle\Entity\Crew $crew)
+     * Set Crew
+     *
+     * @param \Training\ArticleBundle\Entity\Crew $crew
+     * @return Appartient
+     */
+    public function setCrew(\Training\ArticleBundle\Entity\Crew $crew)
     {
         $this->Crew = $crew;
     
@@ -125,10 +125,10 @@ class Appartient
     }
 
     /**
-* Get Crew
-*
-* @return \Urbanet\UserBundle\Entity\Crew
-*/
+     * Get Crew
+     *
+     * @return \Training\ArticleBundle\Entity\Crew 
+     */
     public function getCrew()
     {
         return $this->Crew;

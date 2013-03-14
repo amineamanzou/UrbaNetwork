@@ -1,72 +1,72 @@
 <?php
 
-namespace Urbanet\CvBundle\Entity;
+namespace Training\ArticleBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
-* Competition
-*
-* @ORM\Table()
-* @ORM\Entity(repositoryClass="Urbanet\CvBundle\Entity\CompetitionRepository")
-*/
+ * Competition
+ *
+ * @ORM\Table()
+ * @ORM\Entity(repositoryClass="Training\ArticleBundle\Entity\CompetitionRepository")
+ */
 class Competition
 {
     /**
-* @var integer
-*
-* @ORM\Column(name="id", type="integer")
-* @ORM\Id
-* @ORM\GeneratedValue(strategy="AUTO")
-*/
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
     private $id;
 
     /**
-* @var string
-*
-* @ORM\Column(name="Type", type="string", length=255)
-*/
+     * @var string
+     *
+     * @ORM\Column(name="Type", type="string", length=255)
+     */
     private $Type;
 
     /**
-* @var string
-*
-* @ORM\Column(name="Libelle", type="string", length=255)
-*/
+     * @var string
+     *
+     * @ORM\Column(name="Libelle", type="string", length=255)
+     */
     private $Libelle;
 
     /**
-* @var \DateTime
-*
-* @ORM\Column(name="Date", type="date")
-*/
+     * @var \DateTime
+     *
+     * @ORM\Column(name="Date", type="date")
+     */
     private $Date;
 
     /**
-* @var string
-*
-* @ORM\Column(name="Lieu", type="string", length=255)
-*/
+     * @var string
+     *
+     * @ORM\Column(name="Lieu", type="string", length=255)
+     */
     private $Lieu;
 
 
 
     /**
-* Get id
-*
-* @return integer
-*/
+     * Get id
+     *
+     * @return integer 
+     */
     public function getId()
     {
         return $this->id;
     }
 
     /**
-* Set Type
-*
-* @param string $type
-* @return Competition
-*/
+     * Set Type
+     *
+     * @param string $type
+     * @return Competition
+     */
     public function setType($type)
     {
         $this->Type = $type;
@@ -75,21 +75,21 @@ class Competition
     }
 
     /**
-* Get Type
-*
-* @return string
-*/
+     * Get Type
+     *
+     * @return string 
+     */
     public function getType()
     {
         return $this->Type;
     }
 
     /**
-* Set Libelle
-*
-* @param string $libelle
-* @return Competition
-*/
+     * Set Libelle
+     *
+     * @param string $libelle
+     * @return Competition
+     */
     public function setLibelle($libelle)
     {
         $this->Libelle = $libelle;
@@ -98,21 +98,21 @@ class Competition
     }
 
     /**
-* Get Libelle
-*
-* @return string
-*/
+     * Get Libelle
+     *
+     * @return string 
+     */
     public function getLibelle()
     {
         return $this->Libelle;
     }
 
     /**
-* Set Date
-*
-* @param \DateTime $date
-* @return Competition
-*/
+     * Set Date
+     *
+     * @param \DateTime $date
+     * @return Competition
+     */
     public function setDate($date)
     {
         $this->Date = $date;
@@ -121,21 +121,21 @@ class Competition
     }
 
     /**
-* Get Date
-*
-* @return \DateTime
-*/
+     * Get Date
+     *
+     * @return \DateTime 
+     */
     public function getDate()
     {
         return $this->Date;
     }
 
     /**
-* Set Lieu
-*
-* @param string $lieu
-* @return Competition
-*/
+     * Set Lieu
+     *
+     * @param string $lieu
+     * @return Competition
+     */
     public function setLieu($lieu)
     {
         $this->Lieu = $lieu;
@@ -144,21 +144,21 @@ class Competition
     }
 
     /**
-* Get Lieu
-*
-* @return string
-*/
+     * Get Lieu
+     *
+     * @return string 
+     */
     public function getLieu()
     {
         return $this->Lieu;
     }
 
     /**
-* Set Classement
-*
-* @param integer $classement
-* @return Competition
-*/
+     * Set Classement
+     *
+     * @param integer $classement
+     * @return Competition
+     */
     public function setClassement($classement)
     {
         $this->Classement = $classement;
@@ -167,10 +167,10 @@ class Competition
     }
 
     /**
-* Get Classement
-*
-* @return integer
-*/
+     * Get Classement
+     *
+     * @return integer 
+     */
     public function getClassement()
     {
         return $this->Classement;

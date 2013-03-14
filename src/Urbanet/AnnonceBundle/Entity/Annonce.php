@@ -1,88 +1,88 @@
 <?php
 
-namespace Urbanet\AnnonceBundle\Entity;
+namespace Training\ArticleBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
-* Annonce
-*
-* @ORM\Table()
-* @ORM\Entity(repositoryClass="Urbanet\AnnonceBundle\Entity\AnnonceRepository")
-*/
+ * Annonce
+ *
+ * @ORM\Table()
+ * @ORM\Entity(repositoryClass="Training\ArticleBundle\Entity\AnnonceRepository")
+ */
 class Annonce
 {
     /**
-* @ORM\ManyToMany(targetEntity="Urbanet\AnnonceBundle\Entity\Tag", cascade={"persist"})
-*/
+     * @ORM\ManyToMany(targetEntity="Training\ArticleBundle\Entity\Tag", cascade={"persist"})
+     */
     private $Tag;
 
     /**
-* @ORM\ManyToOne(targetEntity="Urbanet\AnnonceBundle\Entity\CategoryPub")
-* @ORM\JoinColumn(nullable=false)
-*/
+     * @ORM\ManyToOne(targetEntity="Training\ArticleBundle\Entity\CategoryPub")
+     * @ORM\JoinColumn(nullable=false)
+     */
     private $CategoryPub;
 
     /**
-* @ORM\ManyToOne(targetEntity="Urbanet\UserBundle\Entity\Membre")
-* @ORM\JoinColumn(nullable=false)
-*/
+     * @ORM\ManyToOne(targetEntity="Training\ArticleBundle\Entity\Membre")
+     * @ORM\JoinColumn(nullable=false)
+     */
     private $Membre;
 
     /**
-* @var integer
-*
-* @ORM\Column(name="id", type="integer")
-* @ORM\Id
-* @ORM\GeneratedValue(strategy="AUTO")
-*/
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
     private $id;
 
     /**
-* @var string
-*
-* @ORM\Column(name="Titre", type="string", length=255)
-*/
+     * @var string
+     *
+     * @ORM\Column(name="Titre", type="string", length=255)
+     */
     private $Titre;
 
     /**
-* @var \DateTime
-*
-* @ORM\Column(name="Date", type="date")
-*/
+     * @var \DateTime
+     *
+     * @ORM\Column(name="Date", type="date")
+     */
     private $Date;
 
     /**
-* @var string
-*
-* @ORM\Column(name="Ville", type="string", length=255)
-*/
+     * @var string
+     *
+     * @ORM\Column(name="Ville", type="string", length=255)
+     */
     private $Ville;
 
     /**
-* @var string
-*
-* @ORM\Column(name="Contenu", type="string", length=255)
-*/
+     * @var string
+     *
+     * @ORM\Column(name="Contenu", type="string", length=255)
+     */
     private $Contenu;
 
 
     /**
-* Get id
-*
-* @return integer
-*/
+     * Get id
+     *
+     * @return integer 
+     */
     public function getId()
     {
         return $this->id;
     }
 
     /**
-* Set Titre
-*
-* @param string $titre
-* @return Annonce
-*/
+     * Set Titre
+     *
+     * @param string $titre
+     * @return Annonce
+     */
     public function setTitre($titre)
     {
         $this->Titre = $titre;
@@ -91,21 +91,21 @@ class Annonce
     }
 
     /**
-* Get Titre
-*
-* @return string
-*/
+     * Get Titre
+     *
+     * @return string 
+     */
     public function getTitre()
     {
         return $this->Titre;
     }
 
     /**
-* Set Date
-*
-* @param \DateTime $date
-* @return Annonce
-*/
+     * Set Date
+     *
+     * @param \DateTime $date
+     * @return Annonce
+     */
     public function setDate($date)
     {
         $this->Date = $date;
@@ -114,21 +114,21 @@ class Annonce
     }
 
     /**
-* Get Date
-*
-* @return \DateTime
-*/
+     * Get Date
+     *
+     * @return \DateTime 
+     */
     public function getDate()
     {
         return $this->Date;
     }
 
     /**
-* Set Ville
-*
-* @param string $ville
-* @return Annonce
-*/
+     * Set Ville
+     *
+     * @param string $ville
+     * @return Annonce
+     */
     public function setVille($ville)
     {
         $this->Ville = $ville;
@@ -137,21 +137,21 @@ class Annonce
     }
 
     /**
-* Get Ville
-*
-* @return string
-*/
+     * Get Ville
+     *
+     * @return string 
+     */
     public function getVille()
     {
         return $this->Ville;
     }
 
     /**
-* Set Contenu
-*
-* @param string $contenu
-* @return Annonce
-*/
+     * Set Contenu
+     *
+     * @param string $contenu
+     * @return Annonce
+     */
     public function setContenu($contenu)
     {
         $this->Contenu = $contenu;
@@ -160,22 +160,22 @@ class Annonce
     }
 
     /**
-* Get Contenu
-*
-* @return string
-*/
+     * Get Contenu
+     *
+     * @return string 
+     */
     public function getContenu()
     {
         return $this->Contenu;
     }
 
     /**
-* Set CategoryPub
-*
-* @param \Urbanet\ArticleBundle\Entity\CategoryPub $categoryPub
-* @return Annonce
-*/
-    public function setCategoryPub(\Urbanet\ArticleBundle\Entity\CategoryPub $categoryPub)
+     * Set CategoryPub
+     *
+     * @param \Training\ArticleBundle\Entity\CategoryPub $categoryPub
+     * @return Annonce
+     */
+    public function setCategoryPub(\Training\ArticleBundle\Entity\CategoryPub $categoryPub)
     {
         $this->CategoryPub = $categoryPub;
     
@@ -183,22 +183,22 @@ class Annonce
     }
 
     /**
-* Get CategoryPub
-*
-* @return \Urbanet\ArticleBundle\Entity\CategoryPub
-*/
+     * Get CategoryPub
+     *
+     * @return \Training\ArticleBundle\Entity\CategoryPub 
+     */
     public function getCategoryPub()
     {
         return $this->CategoryPub;
     }
 
     /**
-* Set Membre
-*
-* @param \Urbanet\ArticleBundle\Entity\Membre $membre
-* @return Annonce
-*/
-    public function setMembre(\Urbanet\ArticleBundle\Entity\Membre $membre)
+     * Set Membre
+     *
+     * @param \Training\ArticleBundle\Entity\Membre $membre
+     * @return Annonce
+     */
+    public function setMembre(\Training\ArticleBundle\Entity\Membre $membre)
     {
         $this->Membre = $membre;
     
@@ -206,29 +206,29 @@ class Annonce
     }
 
     /**
-* Get Membre
-*
-* @return \Urbanet\ArticleBundle\Entity\Membre
-*/
+     * Get Membre
+     *
+     * @return \Training\ArticleBundle\Entity\Membre 
+     */
     public function getMembre()
     {
         return $this->Membre;
     }
     /**
-* Constructor
-*/
+     * Constructor
+     */
     public function __construct()
     {
         $this->Tag = new \Doctrine\Common\Collections\ArrayCollection();
     }
     
     /**
-* Add Tag
-*
-* @param \Urbanet\ArticleBundle\Entity\Tag $tag
-* @return Annonce
-*/
-    public function addTag(\Urbanet\ArticleBundle\Entity\Tag $tag)
+     * Add Tag
+     *
+     * @param \Training\ArticleBundle\Entity\Tag $tag
+     * @return Annonce
+     */
+    public function addTag(\Training\ArticleBundle\Entity\Tag $tag)
     {
         $this->Tag[] = $tag;
     
@@ -236,20 +236,20 @@ class Annonce
     }
 
     /**
-* Remove Tag
-*
-* @param \Urbanet\ArticleBundle\Entity\Tag $tag
-*/
-    public function removeTag(\Urbanet\ArticleBundle\Entity\Tag $tag)
+     * Remove Tag
+     *
+     * @param \Training\ArticleBundle\Entity\Tag $tag
+     */
+    public function removeTag(\Training\ArticleBundle\Entity\Tag $tag)
     {
         $this->Tag->removeElement($tag);
     }
 
     /**
-* Get Tag
-*
-* @return \Doctrine\Common\Collections\Collection
-*/
+     * Get Tag
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
     public function getTag()
     {
         return $this->Tag;

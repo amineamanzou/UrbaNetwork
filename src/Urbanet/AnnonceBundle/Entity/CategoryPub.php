@@ -1,50 +1,50 @@
 <?php
 
-namespace Urbanet\AnnonceBundle\Entity;
+namespace Training\ArticleBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
-* CategoryPub
-*
-* @ORM\Table()
-* @ORM\Entity(repositoryClass="Urbanet\AnnonceBundle\Entity\CategoryPubRepository")
-*/
+ * CategoryPub
+ *
+ * @ORM\Table()
+ * @ORM\Entity(repositoryClass="Training\ArticleBundle\Entity\CategoryPubRepository")
+ */
 class CategoryPub
 {
     /**
-* @var integer
-*
-* @ORM\Column(name="id", type="integer")
-* @ORM\Id
-* @ORM\GeneratedValue(strategy="AUTO")
-*/
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
     private $id;
 
     /**
-* @var string
-*
-* @ORM\Column(name="Libelle", type="string", length=255)
-*/
+     * @var string
+     *
+     * @ORM\Column(name="Libelle", type="string", length=255)
+     */
     private $Libelle;
 
 
     /**
-* Get id
-*
-* @return integer
-*/
+     * Get id
+     *
+     * @return integer 
+     */
     public function getId()
     {
         return $this->id;
     }
 
     /**
-* Set Libelle
-*
-* @param string $libelle
-* @return CategoryPub
-*/
+     * Set Libelle
+     *
+     * @param string $libelle
+     * @return CategoryPub
+     */
     public function setLibelle($libelle)
     {
         $this->Libelle = $libelle;
@@ -53,10 +53,10 @@ class CategoryPub
     }
 
     /**
-* Get Libelle
-*
-* @return string
-*/
+     * Get Libelle
+     *
+     * @return string 
+     */
     public function getLibelle()
     {
         return $this->Libelle;

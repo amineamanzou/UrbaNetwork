@@ -1,44 +1,44 @@
 <?php
 
-namespace Urbanet\CvBundle\Entity;
+namespace Training\ArticleBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
-* Evaluer
-*
-* @ORM\Table()
-* @ORM\Entity(repositoryClass="Urbanet\CvBundle\Entity\EvaluerRepository")
-*/
+ * Evaluer
+ *
+ * @ORM\Table()
+ * @ORM\Entity(repositoryClass="Training\ArticleBundle\Entity\EvaluerRepository")
+ */
 class Evaluer
 {
     /**
-* @ORM\Id
-* @ORM\ManyToOne(targetEntity="Urbanet\CvBundle\Entity\CVArt")
-*/
+     * @ORM\Id
+     * @ORM\ManyToOne(targetEntity="Training\ArticleBundle\Entity\CVArt")
+     */
     private $CVArt;
 
     /**
-* @ORM\Id
-* @ORM\ManyToOne(targetEntity="Urbanet\CvBundle\Entity\Competence")
-*/
+     * @ORM\Id
+     * @ORM\ManyToOne(targetEntity="Training\ArticleBundle\Entity\Competence")
+     */
     private $Competence;
 
 
     /**
-* @var integer
-*
-* @ORM\Column(name="Niveau", type="integer")
-*/
+     * @var integer
+     *
+     * @ORM\Column(name="Niveau", type="integer")
+     */
     private $Niveau;
 
 
     /**
-* Set Niveau
-*
-* @param integer $niveau
-* @return Evaluer
-*/
+     * Set Niveau
+     *
+     * @param integer $niveau
+     * @return Evaluer
+     */
     public function setNiveau($niveau)
     {
         $this->Niveau = $niveau;
@@ -47,22 +47,22 @@ class Evaluer
     }
 
     /**
-* Get Niveau
-*
-* @return integer
-*/
+     * Get Niveau
+     *
+     * @return integer 
+     */
     public function getNiveau()
     {
         return $this->Niveau;
     }
 
     /**
-* Set CVArt
-*
-* @param \Urbanet\CvBundle\Entity\CVArt $cVArt
-* @return Evaluer
-*/
-    public function setCVArt(\Urbanet\CvBundle\Entity\CVArt $cVArt)
+     * Set CVArt
+     *
+     * @param \Training\ArticleBundle\Entity\CVArt $cVArt
+     * @return Evaluer
+     */
+    public function setCVArt(\Training\ArticleBundle\Entity\CVArt $cVArt)
     {
         $this->CVArt = $cVArt;
     
@@ -70,22 +70,22 @@ class Evaluer
     }
 
     /**
-* Get CVArt
-*
-* @return \Urbanet\CvBundle\Entity\CVArt
-*/
+     * Get CVArt
+     *
+     * @return \Training\ArticleBundle\Entity\CVArt 
+     */
     public function getCVArt()
     {
         return $this->CVArt;
     }
 
     /**
-* Set Competence
-*
-* @param \Urbanet\CvBundle\Entity\Competence $competence
-* @return Evaluer
-*/
-    public function setCompetence(\Urbanet\CvBundle\Entity\Competence $competence)
+     * Set Competence
+     *
+     * @param \Training\ArticleBundle\Entity\Competence $competence
+     * @return Evaluer
+     */
+    public function setCompetence(\Training\ArticleBundle\Entity\Competence $competence)
     {
         $this->Competence = $competence;
     
@@ -93,10 +93,10 @@ class Evaluer
     }
 
     /**
-* Get Competence
-*
-* @return \Urbanet\CvBundle\Entity\Competence
-*/
+     * Get Competence
+     *
+     * @return \Training\ArticleBundle\Entity\Competence 
+     */
     public function getCompetence()
     {
         return $this->Competence;

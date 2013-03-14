@@ -1,67 +1,67 @@
 <?php
 
-namespace Urbanet\CvBundle\Entity;
+namespace Training\ArticleBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
-* CVArt
-*
-* @ORM\Table()
-* @ORM\Entity(repositoryClass="Urbanet\CvBundle\Entity\CVArtRepository")
-*/
+ * CVArt
+ *
+ * @ORM\Table()
+ * @ORM\Entity(repositoryClass="Training\ArticleBundle\Entity\CVArtRepository")
+ */
 class CVArt
 {
     /**
-* @ORM\ManyToMany(targetEntity="Urbanet\CvBundle\Entity\Spectacle", cascade={"persist"})
-*/
+     * @ORM\ManyToMany(targetEntity="Training\ArticleBundle\Entity\Spectacle", cascade={"persist"})
+     */
     private $Spectacle;
 
     /**
-* @ORM\ManyToMany(targetEntity="Urbanet\CvBundle\Entity\Formation", cascade={"persist"})
-*/
+     * @ORM\ManyToMany(targetEntity="Training\ArticleBundle\Entity\Formation", cascade={"persist"})
+     */
     private $Formation;
 
     /**
-* @var integer
-*
-* @ORM\Column(name="id", type="integer")
-* @ORM\Id
-* @ORM\GeneratedValue(strategy="AUTO")
-*/
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
     private $id;
 
     /**
-* @var string
-*
-* @ORM\Column(name="Titre", type="string", length=255)
-*/
+     * @var string
+     *
+     * @ORM\Column(name="Titre", type="string", length=255)
+     */
     private $Titre;
 
     /**
-* @var string
-*
-* @ORM\Column(name="Photo", type="string", length=255)
-*/
-    private $Photo;
+     * @var string
+     *
+     * @ORM\Column(name="Logo", type="string", length=255)
+     */
+    private $Logo;
 
 
     /**
-* Get id
-*
-* @return integer
-*/
+     * Get id
+     *
+     * @return integer 
+     */
     public function getId()
     {
         return $this->id;
     }
 
     /**
-* Set Titre
-*
-* @param string $titre
-* @return CVArt
-*/
+     * Set Titre
+     *
+     * @param string $titre
+     * @return CVArt
+     */
     public function setTitre($titre)
     {
         $this->Titre = $titre;
@@ -70,21 +70,21 @@ class CVArt
     }
 
     /**
-* Get Titre
-*
-* @return string
-*/
+     * Get Titre
+     *
+     * @return string 
+     */
     public function getTitre()
     {
         return $this->Titre;
     }
 
     /**
-* Set Logo
-*
-* @param string $logo
-* @return CVArt
-*/
+     * Set Logo
+     *
+     * @param string $logo
+     * @return CVArt
+     */
     public function setLogo($logo)
     {
         $this->Logo = $logo;
@@ -93,17 +93,17 @@ class CVArt
     }
 
     /**
-* Get Logo
-*
-* @return string
-*/
+     * Get Logo
+     *
+     * @return string 
+     */
     public function getLogo()
     {
         return $this->Logo;
     }
     /**
-* Constructor
-*/
+     * Constructor
+     */
     public function __construct()
     {
         $this->Spectacle = new \Doctrine\Common\Collections\ArrayCollection();
@@ -111,12 +111,12 @@ class CVArt
     }
     
     /**
-* Add Spectacle
-*
-* @param \Urbanet\CvBundle\Entity\Spectacle $spectacle
-* @return CVArt
-*/
-    public function addSpectacle(\Urbanet\CvBundle\Entity\Spectacle $spectacle)
+     * Add Spectacle
+     *
+     * @param \Training\ArticleBundle\Entity\Spectacle $spectacle
+     * @return CVArt
+     */
+    public function addSpectacle(\Training\ArticleBundle\Entity\Spectacle $spectacle)
     {
         $this->Spectacle[] = $spectacle;
     
@@ -124,32 +124,32 @@ class CVArt
     }
 
     /**
-* Remove Spectacle
-*
-* @param \Urbanet\CvBundle\Entity\Spectacle $spectacle
-*/
-    public function removeSpectacle(\Urbanet\CvBundle\Entity\Spectacle $spectacle)
+     * Remove Spectacle
+     *
+     * @param \Training\ArticleBundle\Entity\Spectacle $spectacle
+     */
+    public function removeSpectacle(\Training\ArticleBundle\Entity\Spectacle $spectacle)
     {
         $this->Spectacle->removeElement($spectacle);
     }
 
     /**
-* Get Spectacle
-*
-* @return \Doctrine\Common\Collections\Collection
-*/
+     * Get Spectacle
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
     public function getSpectacle()
     {
         return $this->Spectacle;
     }
 
     /**
-* Add Formation
-*
-* @param \Urbanet\CvBundle\Entity\Formation $formation
-* @return CVArt
-*/
-    public function addFormation(\Urbanet\CvBundle\Entity\Formation $formation)
+     * Add Formation
+     *
+     * @param \Training\ArticleBundle\Entity\Formation $formation
+     * @return CVArt
+     */
+    public function addFormation(\Training\ArticleBundle\Entity\Formation $formation)
     {
         $this->Formation[] = $formation;
     
@@ -157,45 +157,22 @@ class CVArt
     }
 
     /**
-* Remove Formation
-*
-* @param \Urbanet\CvBundle\Entity\Formation $formation
-*/
-    public function removeFormation(\Urbanet\CvBundle\Entity\Formation $formation)
+     * Remove Formation
+     *
+     * @param \Training\ArticleBundle\Entity\Formation $formation
+     */
+    public function removeFormation(\Training\ArticleBundle\Entity\Formation $formation)
     {
         $this->Formation->removeElement($formation);
     }
 
     /**
-* Get Formation
-*
-* @return \Doctrine\Common\Collections\Collection
-*/
+     * Get Formation
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
     public function getFormation()
     {
         return $this->Formation;
-    }
-
-    /**
-* Set Photo
-*
-* @param string $photo
-* @return CVArt
-*/
-    public function setPhoto($photo)
-    {
-        $this->Photo = $photo;
-    
-        return $this;
-    }
-
-    /**
-* Get Photo
-*
-* @return string
-*/
-    public function getPhoto()
-    {
-        return $this->Photo;
     }
 }

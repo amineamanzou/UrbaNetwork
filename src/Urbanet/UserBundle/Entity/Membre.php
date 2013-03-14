@@ -1,102 +1,102 @@
 <?php
 
-namespace Urbanet\UserBundle\Entity;
+namespace Training\ArticleBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
-* Membre
-*
-* @ORM\Table()
-* @ORM\Entity(repositoryClass="Urbanet\UserBundle\Entity\MembreRepository")
-*/
+ * Membre
+ *
+ * @ORM\Table()
+ * @ORM\Entity(repositoryClass="Training\ArticleBundle\Entity\MembreRepository")
+ */
 class Membre
 {
     /**
-* @ORM\OneToOne(targetEntity="Urbanet\UserBundle\Entity\Artiste", cascade={"persist"})
-*/
+     * @ORM\OneToOne(targetEntity="Training\ArticleBundle\Entity\Artiste", cascade={"persist"})
+    */
     private $Artiste;
 
     /**
-* @ORM\OneToOne(targetEntity="Urbanet\UserBundle\Entity\Annonceur", cascade={"persist"})
-*/
-    private $Annonceur;
+     * @ORM\OneToOne(targetEntity="Training\ArticleBundle\Entity\Annonceur", cascade={"persist"})
+    */
+    private $Annonceur;    
 
     /**
-* @var integer
-*
-* @ORM\Column(name="id", type="integer")
-* @ORM\Id
-* @ORM\GeneratedValue(strategy="AUTO")
-*/
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
     private $id;
 
     /**
-* @var string
-*
-* @ORM\Column(name="Type", type="string", length=255)
-*/
+     * @var string
+     *
+     * @ORM\Column(name="Type", type="string", length=255)
+     */
     private $Type;
 
     /**
-* @var boolean
-*
-* @ORM\Column(name="Permission", type="boolean")
-*/
+     * @var boolean
+     *
+     * @ORM\Column(name="Permission", type="boolean")
+     */
     private $Permission;
 
     /**
-* @var string
-*
-* @ORM\Column(name="Adresse", type="string", length=255)
-*/
+     * @var string
+     *
+     * @ORM\Column(name="Adresse", type="string", length=255)
+     */
     private $Adresse;
 
     /**
-* @var string
-*
-* @ORM\Column(name="Ville", type="string", length=255)
-*/
+     * @var string
+     *
+     * @ORM\Column(name="Ville", type="string", length=255)
+     */
     private $Ville;
 
     /**
-* @var integer
-*
-* @ORM\Column(name="CP", type="integer")
-*/
+     * @var integer
+     *
+     * @ORM\Column(name="CP", type="integer")
+     */
     private $CP;
 
     /**
-* @var string
-*
-* @ORM\Column(name="Pays", type="string", length=255)
-*/
+     * @var string
+     *
+     * @ORM\Column(name="Pays", type="string", length=255)
+     */
     private $Pays;
 
     /**
-* @var integer
-*
-* @ORM\Column(name="NumTel", type="integer")
-*/
+     * @var integer
+     *
+     * @ORM\Column(name="NumTel", type="integer")
+     */
     private $NumTel;
 
 
     /**
-* Get id
-*
-* @return integer
-*/
+     * Get id
+     *
+     * @return integer 
+     */
     public function getId()
     {
         return $this->id;
     }
 
     /**
-* Set Type
-*
-* @param string $type
-* @return Membre
-*/
+     * Set Type
+     *
+     * @param string $type
+     * @return Membre
+     */
     public function setType($type)
     {
         $this->Type = $type;
@@ -105,21 +105,21 @@ class Membre
     }
 
     /**
-* Get Type
-*
-* @return string
-*/
+     * Get Type
+     *
+     * @return string 
+     */
     public function getType()
     {
         return $this->Type;
     }
 
     /**
-* Set Permission
-*
-* @param boolean $permission
-* @return Membre
-*/
+     * Set Permission
+     *
+     * @param boolean $permission
+     * @return Membre
+     */
     public function setPermission($permission)
     {
         $this->Permission = $permission;
@@ -128,21 +128,21 @@ class Membre
     }
 
     /**
-* Get Permission
-*
-* @return boolean
-*/
+     * Get Permission
+     *
+     * @return boolean 
+     */
     public function getPermission()
     {
         return $this->Permission;
     }
 
     /**
-* Set Adresse
-*
-* @param string $adresse
-* @return Membre
-*/
+     * Set Adresse
+     *
+     * @param string $adresse
+     * @return Membre
+     */
     public function setAdresse($adresse)
     {
         $this->Adresse = $adresse;
@@ -151,21 +151,21 @@ class Membre
     }
 
     /**
-* Get Adresse
-*
-* @return string
-*/
+     * Get Adresse
+     *
+     * @return string 
+     */
     public function getAdresse()
     {
         return $this->Adresse;
     }
 
     /**
-* Set Ville
-*
-* @param string $ville
-* @return Membre
-*/
+     * Set Ville
+     *
+     * @param string $ville
+     * @return Membre
+     */
     public function setVille($ville)
     {
         $this->Ville = $ville;
@@ -174,21 +174,21 @@ class Membre
     }
 
     /**
-* Get Ville
-*
-* @return string
-*/
+     * Get Ville
+     *
+     * @return string 
+     */
     public function getVille()
     {
         return $this->Ville;
     }
 
     /**
-* Set CP
-*
-* @param integer $cP
-* @return Membre
-*/
+     * Set CP
+     *
+     * @param integer $cP
+     * @return Membre
+     */
     public function setCP($cP)
     {
         $this->CP = $cP;
@@ -197,21 +197,21 @@ class Membre
     }
 
     /**
-* Get CP
-*
-* @return integer
-*/
+     * Get CP
+     *
+     * @return integer 
+     */
     public function getCP()
     {
         return $this->CP;
     }
 
     /**
-* Set Pays
-*
-* @param string $pays
-* @return Membre
-*/
+     * Set Pays
+     *
+     * @param string $pays
+     * @return Membre
+     */
     public function setPays($pays)
     {
         $this->Pays = $pays;
@@ -220,21 +220,21 @@ class Membre
     }
 
     /**
-* Get Pays
-*
-* @return string
-*/
+     * Get Pays
+     *
+     * @return string 
+     */
     public function getPays()
     {
         return $this->Pays;
     }
 
     /**
-* Set NumTel
-*
-* @param integer $numTel
-* @return Membre
-*/
+     * Set NumTel
+     *
+     * @param integer $numTel
+     * @return Membre
+     */
     public function setNumTel($numTel)
     {
         $this->NumTel = $numTel;
@@ -243,22 +243,22 @@ class Membre
     }
 
     /**
-* Get NumTel
-*
-* @return integer
-*/
+     * Get NumTel
+     *
+     * @return integer 
+     */
     public function getNumTel()
     {
         return $this->NumTel;
     }
 
     /**
-* Set Artiste
-*
-* @param \Urbanet\UserBundle\Entity\Artiste $artiste
-* @return Membre
-*/
-    public function setArtiste(\Urbanet\UserBundle\Entity\Artiste $artiste = null)
+     * Set Artiste
+     *
+     * @param \Training\ArticleBundle\Entity\Artiste $artiste
+     * @return Membre
+     */
+    public function setArtiste(\Training\ArticleBundle\Entity\Artiste $artiste = null)
     {
         $this->Artiste = $artiste;
     
@@ -266,22 +266,22 @@ class Membre
     }
 
     /**
-* Get Artiste
-*
-* @return \Urbanet\UserBundle\Entity\Artiste
-*/
+     * Get Artiste
+     *
+     * @return \Training\ArticleBundle\Entity\Artiste 
+     */
     public function getArtiste()
     {
         return $this->Artiste;
     }
 
     /**
-* Set Annonceur
-*
-* @param \Urbanet\UserBundle\Entity\Annonceur $annonceur
-* @return Membre
-*/
-    public function setAnnonceur(\Urbanet\UserBundle\Entity\Annonceur $annonceur = null)
+     * Set Annonceur
+     *
+     * @param \Training\ArticleBundle\Entity\Annonceur $annonceur
+     * @return Membre
+     */
+    public function setAnnonceur(\Training\ArticleBundle\Entity\Annonceur $annonceur = null)
     {
         $this->Annonceur = $annonceur;
     
@@ -289,10 +289,10 @@ class Membre
     }
 
     /**
-* Get Annonceur
-*
-* @return \Urbanet\UserBundle\Entity\Annonceur
-*/
+     * Get Annonceur
+     *
+     * @return \Training\ArticleBundle\Entity\Annonceur 
+     */
     public function getAnnonceur()
     {
         return $this->Annonceur;

@@ -1,44 +1,44 @@
 <?php
 
-namespace Urbanet\CvBundle\Entity;
+namespace Training\ArticleBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
-* Classement
-*
-* @ORM\Table()
-* @ORM\Entity(repositoryClass="Urbanet\CvBundle\Entity\ClassementRepository")
-*/
+ * Classement
+ *
+ * @ORM\Table()
+ * @ORM\Entity(repositoryClass="Training\ArticleBundle\Entity\ClassementRepository")
+ */
 class Classement
 {
     /**
-* @ORM\Id
-* @ORM\ManyToOne(targetEntity="Urbanet\CvBundle\Entity\CVArt")
-*/
+     * @ORM\Id
+     * @ORM\ManyToOne(targetEntity="Training\ArticleBundle\Entity\CVArt")
+     */
     private $CVArt;
 
     /**
-* @ORM\Id
-* @ORM\ManyToOne(targetEntity="Urbanet\CvBundle\Entity\Competition")
-*/
+     * @ORM\Id
+     * @ORM\ManyToOne(targetEntity="Training\ArticleBundle\Entity\Competition")
+     */
     private $Competition;
 
 
     /**
-* @var string
-*
-* @ORM\Column(name="Classement", type="string", length=255)
-*/
+     * @var string
+     *
+     * @ORM\Column(name="Classement", type="string", length=255)
+     */
     private $Classement;
 
 
     /**
-* Set Classement
-*
-* @param string $classement
-* @return Classement
-*/
+     * Set Classement
+     *
+     * @param string $classement
+     * @return Classement
+     */
     public function setClassement($classement)
     {
         $this->Classement = $classement;
@@ -47,22 +47,22 @@ class Classement
     }
 
     /**
-* Get Classement
-*
-* @return string
-*/
+     * Get Classement
+     *
+     * @return string 
+     */
     public function getClassement()
     {
         return $this->Classement;
     }
 
     /**
-* Set CVArt
-*
-* @param \Urbanet\CvBundle\Entity\CVArt $cVArt
-* @return Classement
-*/
-    public function setCVArt(\Urbanet\CvBundle\Entity\CVArt $cVArt)
+     * Set CVArt
+     *
+     * @param \Training\ArticleBundle\Entity\CVArt $cVArt
+     * @return Classement
+     */
+    public function setCVArt(\Training\ArticleBundle\Entity\CVArt $cVArt)
     {
         $this->CVArt = $cVArt;
     
@@ -70,22 +70,22 @@ class Classement
     }
 
     /**
-* Get CVArt
-*
-* @return \Urbanet\CvBundle\Entity\CVArt
-*/
+     * Get CVArt
+     *
+     * @return \Training\ArticleBundle\Entity\CVArt 
+     */
     public function getCVArt()
     {
         return $this->CVArt;
     }
 
     /**
-* Set Competition
-*
-* @param \Urbanet\CvBundle\Entity\Competition $competition
-* @return Classement
-*/
-    public function setCompetition(\Urbanet\CvBundle\Entity\Competition $competition)
+     * Set Competition
+     *
+     * @param \Training\ArticleBundle\Entity\Competition $competition
+     * @return Classement
+     */
+    public function setCompetition(\Training\ArticleBundle\Entity\Competition $competition)
     {
         $this->Competition = $competition;
     
@@ -93,10 +93,10 @@ class Classement
     }
 
     /**
-* Get Competition
-*
-* @return \Urbanet\CvBundle\Entity\Competition
-*/
+     * Get Competition
+     *
+     * @return \Training\ArticleBundle\Entity\Competition 
+     */
     public function getCompetition()
     {
         return $this->Competition;
