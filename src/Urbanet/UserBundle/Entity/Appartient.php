@@ -1,6 +1,6 @@
 <?php
 
-namespace Training\ArticleBundle\Entity;
+namespace Urbanet\UserBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -8,19 +8,19 @@ use Doctrine\ORM\Mapping as ORM;
  * Appartient
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="Training\ArticleBundle\Entity\AppartientRepository")
+ * @ORM\Entity(repositoryClass="Urbanet\UserBundle\Entity\AppartientRepository")
  */
 class Appartient
 {
     /**
      * @ORM\Id
-     * @ORM\ManyToOne(targetEntity="Training\ArticleBundle\Entity\Artiste")
+     * @ORM\ManyToOne(targetEntity="Urbanet\UserBundle\Entity\Artiste")
      */
     private $Artiste;
 
     /**
      * @ORM\Id
-     * @ORM\ManyToOne(targetEntity="Training\ArticleBundle\Entity\Crew")
+     * @ORM\ManyToOne(targetEntity="Urbanet\CvBundle\Entity\Crew")
      */
     private $Crew;
 
@@ -91,10 +91,10 @@ class Appartient
     /**
      * Set Artiste
      *
-     * @param \Training\ArticleBundle\Entity\Artiste $artiste
+     * @param \Urbanet\UserBundle\Entity\Artiste $artiste
      * @return Appartient
      */
-    public function setArtiste(\Training\ArticleBundle\Entity\Artiste $artiste)
+    public function setArtiste(\Urbanet\UserBundle\Entity\Artiste $artiste)
     {
         $this->Artiste = $artiste;
     
@@ -104,7 +104,7 @@ class Appartient
     /**
      * Get Artiste
      *
-     * @return \Training\ArticleBundle\Entity\Artiste 
+     * @return \Urbanet\UserBundle\Entity\Artiste 
      */
     public function getArtiste()
     {
@@ -114,10 +114,10 @@ class Appartient
     /**
      * Set Crew
      *
-     * @param \Training\ArticleBundle\Entity\Crew $crew
+     * @param \Urbanet\UserBundle\Entity\Crew $crew
      * @return Appartient
      */
-    public function setCrew(\Training\ArticleBundle\Entity\Crew $crew)
+    public function setCrew(\Urbanet\UserBundle\Entity\Crew $crew)
     {
         $this->Crew = $crew;
     
@@ -127,7 +127,7 @@ class Appartient
     /**
      * Get Crew
      *
-     * @return \Training\ArticleBundle\Entity\Crew 
+     * @return \Urbanet\UserBundle\Entity\Crew 
      */
     public function getCrew()
     {

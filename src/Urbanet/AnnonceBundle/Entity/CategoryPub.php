@@ -1,6 +1,6 @@
 <?php
 
-namespace Training\ArticleBundle\Entity;
+namespace Urbanet\AnnonceBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * CategoryPub
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="Training\ArticleBundle\Entity\CategoryPubRepository")
+ * @ORM\Entity(repositoryClass="Urbanet\AnnonceBundle\Entity\CategoryPubRepository")
  */
 class CategoryPub
 {

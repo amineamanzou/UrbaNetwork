@@ -1,6 +1,6 @@
 <?php
 
-namespace Training\ArticleBundle\Entity;
+namespace Urbanet\AnnonceBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -8,23 +8,23 @@ use Doctrine\ORM\Mapping as ORM;
  * Annonce
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="Training\ArticleBundle\Entity\AnnonceRepository")
+ * @ORM\Entity(repositoryClass="Urbanet\AnnonceBundle\Entity\AnnonceRepository")
  */
 class Annonce
 {
     /**
-     * @ORM\ManyToMany(targetEntity="Training\ArticleBundle\Entity\Tag", cascade={"persist"})
+     * @ORM\ManyToMany(targetEntity="Urbanet\AnnonceBundle\Entity\Tag", cascade={"persist"})
      */
     private $Tag;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Training\ArticleBundle\Entity\CategoryPub")
+     * @ORM\ManyToOne(targetEntity="Urbanet\AnnonceBundle\Entity\CategoryPub")
      * @ORM\JoinColumn(nullable=false)
      */
     private $CategoryPub;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Training\ArticleBundle\Entity\Membre")
+     * @ORM\ManyToOne(targetEntity="Urbanet\UserBundle\Entity\Membre")
      * @ORM\JoinColumn(nullable=false)
      */
     private $Membre;
@@ -172,10 +172,10 @@ class Annonce
     /**
      * Set CategoryPub
      *
-     * @param \Training\ArticleBundle\Entity\CategoryPub $categoryPub
+     * @param \Urbanet\ArticleBundle\Entity\CategoryPub $categoryPub
      * @return Annonce
      */
-    public function setCategoryPub(\Training\ArticleBundle\Entity\CategoryPub $categoryPub)
+    public function setCategoryPub(\Urbanet\ArticleBundle\Entity\CategoryPub $categoryPub)
     {
         $this->CategoryPub = $categoryPub;
     
@@ -185,7 +185,7 @@ class Annonce
     /**
      * Get CategoryPub
      *
-     * @return \Training\ArticleBundle\Entity\CategoryPub 
+     * @return \Urbanet\ArticleBundle\Entity\CategoryPub 
      */
     public function getCategoryPub()
     {
@@ -195,10 +195,10 @@ class Annonce
     /**
      * Set Membre
      *
-     * @param \Training\ArticleBundle\Entity\Membre $membre
+     * @param \Urbanet\ArticleBundle\Entity\Membre $membre
      * @return Annonce
      */
-    public function setMembre(\Training\ArticleBundle\Entity\Membre $membre)
+    public function setMembre(\Urbanet\ArticleBundle\Entity\Membre $membre)
     {
         $this->Membre = $membre;
     
@@ -208,7 +208,7 @@ class Annonce
     /**
      * Get Membre
      *
-     * @return \Training\ArticleBundle\Entity\Membre 
+     * @return \Urbanet\ArticleBundle\Entity\Membre 
      */
     public function getMembre()
     {
@@ -225,10 +225,10 @@ class Annonce
     /**
      * Add Tag
      *
-     * @param \Training\ArticleBundle\Entity\Tag $tag
+     * @param \Urbanet\ArticleBundle\Entity\Tag $tag
      * @return Annonce
      */
-    public function addTag(\Training\ArticleBundle\Entity\Tag $tag)
+    public function addTag(\Urbanet\ArticleBundle\Entity\Tag $tag)
     {
         $this->Tag[] = $tag;
     
@@ -238,9 +238,9 @@ class Annonce
     /**
      * Remove Tag
      *
-     * @param \Training\ArticleBundle\Entity\Tag $tag
+     * @param \Urbanet\ArticleBundle\Entity\Tag $tag
      */
-    public function removeTag(\Training\ArticleBundle\Entity\Tag $tag)
+    public function removeTag(\Urbanet\ArticleBundle\Entity\Tag $tag)
     {
         $this->Tag->removeElement($tag);
     }

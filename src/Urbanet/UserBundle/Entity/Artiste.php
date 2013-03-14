@@ -1,6 +1,6 @@
 <?php
 
-namespace Training\ArticleBundle\Entity;
+namespace Urbanet\UserBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -8,23 +8,23 @@ use Doctrine\ORM\Mapping as ORM;
  * Artiste
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="Training\ArticleBundle\Entity\ArtisteRepository")
+ * @ORM\Entity(repositoryClass="Urbanet\UserBundle\Entity\ArtisteRepository")
  */
 class Artiste
 {
     /**
-     * @ORM\ManyToMany(targetEntity="Training\ArticleBundle\Entity\Discipline", cascade={"persist"})
+     * @ORM\ManyToMany(targetEntity="Urbanet\UserBundle\Entity\Discipline", cascade={"persist"})
      */
     private $Discipline;
 
     /**
-     * @ORM\OneToOne(targetEntity="Training\ArticleBundle\Entity\CVArt", cascade={"persist"})
+     * @ORM\OneToOne(targetEntity="Urbanet\CvBundle\Entity\CVArt", cascade={"persist"})
      * @ORM\JoinColumn(nullable=false)
      */
     private $CVArt;
 
     /**
-     * @ORM\OneToOne(targetEntity="Training\ArticleBundle\Entity\Mediatheque", cascade={"persist"})
+     * @ORM\OneToOne(targetEntity="Urbanet\MediaBundle\Entity\Mediatheque", cascade={"persist"})
      */
     private $Mediatheque;
 
@@ -141,10 +141,10 @@ class Artiste
     /**
      * Set CVArt
      *
-     * @param \Training\ArticleBundle\Entity\CVArt $cVArt
+     * @param \Urbanet\UserBundle\Entity\CVArt $cVArt
      * @return Artiste
      */
-    public function setCVArt(\Training\ArticleBundle\Entity\CVArt $cVArt = null)
+    public function setCVArt(\Urbanet\UserBundle\Entity\CVArt $cVArt = null)
     {
         $this->CVArt = $cVArt;
     
@@ -154,7 +154,7 @@ class Artiste
     /**
      * Get CVArt
      *
-     * @return \Training\ArticleBundle\Entity\CVArt 
+     * @return \Urbanet\UserBundle\Entity\CVArt 
      */
     public function getCVArt()
     {
@@ -164,10 +164,10 @@ class Artiste
     /**
      * Set Mediatheque
      *
-     * @param \Training\ArticleBundle\Entity\Mediatheque $mediatheque
+     * @param \Urbanet\UserBundle\Entity\Mediatheque $mediatheque
      * @return Artiste
      */
-    public function setMediatheque(\Training\ArticleBundle\Entity\Mediatheque $mediatheque = null)
+    public function setMediatheque(\Urbanet\UserBundle\Entity\Mediatheque $mediatheque = null)
     {
         $this->Mediatheque = $mediatheque;
     
@@ -177,7 +177,7 @@ class Artiste
     /**
      * Get Mediatheque
      *
-     * @return \Training\ArticleBundle\Entity\Mediatheque 
+     * @return \Urbanet\UserBundle\Entity\Mediatheque 
      */
     public function getMediatheque()
     {
@@ -194,10 +194,10 @@ class Artiste
     /**
      * Add Discipline
      *
-     * @param \Training\ArticleBundle\Entity\Discipline $discipline
+     * @param \Urbanet\UserBundle\Entity\Discipline $discipline
      * @return Artiste
      */
-    public function addDiscipline(\Training\ArticleBundle\Entity\Discipline $discipline)
+    public function addDiscipline(\Urbanet\UserBundle\Entity\Discipline $discipline)
     {
         $this->Discipline[] = $discipline;
     
@@ -207,9 +207,9 @@ class Artiste
     /**
      * Remove Discipline
      *
-     * @param \Training\ArticleBundle\Entity\Discipline $discipline
+     * @param \Urbanet\UserBundle\Entity\Discipline $discipline
      */
-    public function removeDiscipline(\Training\ArticleBundle\Entity\Discipline $discipline)
+    public function removeDiscipline(\Urbanet\UserBundle\Entity\Discipline $discipline)
     {
         $this->Discipline->removeElement($discipline);
     }
