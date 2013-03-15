@@ -1,6 +1,6 @@
 <?php
 
-namespace Training\ArticleBundle\Entity;
+namespace Urbanet\MediaBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -8,12 +8,12 @@ use Doctrine\ORM\Mapping as ORM;
  * Mediatheque
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="Training\ArticleBundle\Entity\MediathequeRepository")
+ * @ORM\Entity(repositoryClass="Urbanet\MediaBundle\Entity\MediathequeRepository")
  */
 class Mediatheque
 {
     /**
-     * @ORM\ManyToMany(targetEntity="Training\ArticleBundle\Entity\Video", cascade={"persist"})
+     * @ORM\ManyToMany(targetEntity="Urbanet\MediaBundle\Entity\Video", cascade={"persist"})
      */
     private $Video;
 
@@ -77,10 +77,10 @@ class Mediatheque
     /**
      * Add Video
      *
-     * @param \Training\ArticleBundle\Entity\Video $video
+     * @param \Urbanet\MediaBundle\Entity\Video $video
      * @return Mediatheque
      */
-    public function addVideo(\Training\ArticleBundle\Entity\Video $video)
+    public function addVideo(\Urbanet\MediaBundle\Entity\Video $video)
     {
         $this->Video[] = $video;
     
@@ -90,9 +90,9 @@ class Mediatheque
     /**
      * Remove Video
      *
-     * @param \Training\ArticleBundle\Entity\Video $video
+     * @param \Urbanet\MediaBundle\Entity\Video $video
      */
-    public function removeVideo(\Training\ArticleBundle\Entity\Video $video)
+    public function removeVideo(\Urbanet\MediaBundle\Entity\Video $video)
     {
         $this->Video->removeElement($video);
     }

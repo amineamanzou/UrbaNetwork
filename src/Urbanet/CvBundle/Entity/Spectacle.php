@@ -1,6 +1,6 @@
 <?php
 
-namespace Training\ArticleBundle\Entity;
+namespace Urbanet\CvBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Spectacle
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="Training\ArticleBundle\Entity\SpectacleRepository")
+ * @ORM\Entity(repositoryClass="Urbanet\CvBundle\Entity\SpectacleRepository")
  */
 class Spectacle
 {
@@ -52,7 +52,7 @@ class Spectacle
     /**
      * @var integer
      *
-     * @ORM\Column(name="Nbr", type="integer")
+     * @ORM\Column(name="Nbr", type="integer", nullable=true)
      */
     private $Nbr;
 

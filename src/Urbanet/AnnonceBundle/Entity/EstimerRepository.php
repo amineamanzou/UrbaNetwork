@@ -1,6 +1,6 @@
 <?php
 
-namespace Training\ArticleBundle\Entity;
+namespace Training\AnnonceBundle\Entity;
 
 use Doctrine\ORM\EntityRepository;
 
