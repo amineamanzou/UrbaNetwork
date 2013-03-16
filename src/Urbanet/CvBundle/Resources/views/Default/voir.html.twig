@@ -1,24 +1,59 @@
 {% extends "::base.html.twig" %}
 
 {% block body %}
+
 <p><center><h1>Mon CV</h1></center></p>
 
+<h2>Editer Mon Cv</h2>
+<hr>
+<h4>Information générales</h4>
+
 <header>
-<h2>
-{{ CVArt.Titre }}
-</h2>
+	<h2>
+		{{ CVArt.Titre }}
+	</h2>
 </header>
 
 <p>
-<img src="{{ CVArt.Photo }}">
+	<img src="{{ CVArt.Photo }}">
 </p>
 
 <p>
-<a href="{{ path('urbanet_cv_editer', { id : CVArt.id}) }}" class="btn btn-success">Editer</a>
+	<a href="{{ path('urbanet_cv_editer', { id : CVArt.id}) }}" class="btn btn-success btn-mini">Editer</a>
 </p>
 
-<h4>Information générales</h4>
 <hr>
+<p>
+<h4>Spectacle</h4>
+	<a href="{{ path('urbanet_cv_ajouter_spectacle', { id : CVArt.id}) }}">Ajouter un spectacle</a>
+</p>
+
+{% if Spectacle is defined %}
+	{% for Spectacle in CVArt.Spectacle %}
+         <p>{{ Spectacle.Id }} {{ Spectacle.Type }} {{ Spectacle.Libelle }} 
+         	{{ Spectacle.Date|date("d/m/Y") }} {{ Spectacle.Lieu }} {{ Spectacle.Nbr }}
+         	<a href="{{ path('urbanet_cv_editer_spectacle', { id : Spectacle.id}) }}" class="btn btn-success btn-mini">Editer</a>
+         </p>
+    {% endfor %}
+{% endif %}
+
+<hr>
+<h4>Formation</h4>
+<p>
+	<a href="{{ path('urbanet_cv_editer', { id : CVArt.id}) }}">Ajouter une formation</a>
+</p>
+
+<hr>
+<h4>Competence</h4>
+<p>
+	<a href="{{ path('urbanet_cv_editer', { id : CVArt.id}) }}">Ajouter une competence</a>
+</p>
+
+<hr>
+<h4>Competition</h4>
+<p>
+	<a href="{{ path('urbanet_cv_editer', { id : CVArt.id}) }}">Ajouter une competition</a>
+</p>
 
 
 {% endblock %}
