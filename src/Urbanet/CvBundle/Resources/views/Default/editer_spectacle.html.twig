@@ -6,11 +6,10 @@
 
 <h2>Editer Mon Cv</h2>
 <hr>
-<h4>Information générales</h4>
-
+<h4>Spectacle</h4>
 
 <div class="container">
-    <form class="form-horizontal" action="{{ path("urbanet_cv_editer", { id: id}) }}" method="post">
+    <form class="form-horizontal" action="{{ path("urbanet_cv_editer_spectacle", { id: id}) }}" method="post">
         {{ form_widget(form) }}
     
     		<input type="submit" class="btn btn-success" value="Editer"/>

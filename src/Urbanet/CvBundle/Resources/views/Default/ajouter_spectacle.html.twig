@@ -4,17 +4,18 @@
 
 <p><center><h1>Mon CV</h1></center></p>
 
-<h2>Ajouter des informations à Mon Cv</h2>
-<h4>Information générales</h4>
+<h2>Ajouter un spectacle à Mon Cv</h2>
 <hr>
 
+
 <div class="container">
-    <form class="form-horizontal" action="{{ path("urbanet_cv_ajouter") }}" method="post">
+    <form class="form-horizontal" action="{{ path("urbanet_cv_ajouter_spectacle", { id: id}) }}" method="post">
         {{ form_widget(form) }}
-    
-    
+
             <input class="btn btn-primary" type="submit" value="Ajouter">
             <input class="btn btn-danger" type="button" value="Effacer">
+
+           <p><a href="{{ path('urbanet_cv_voir', { id : id}) }}">Retour</a></p>
     </form>
 </div>
 
