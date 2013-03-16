@@ -1,6 +1,6 @@
 <?php
 
-namespace Training\ArticleBundle\Entity;
+namespace Urbanet\CvBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -8,19 +8,19 @@ use Doctrine\ORM\Mapping as ORM;
  * Classement
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="Training\ArticleBundle\Entity\ClassementRepository")
+ * @ORM\Entity(repositoryClass="Urbanet\CvBundle\Entity\ClassementRepository")
  */
 class Classement
 {
     /**
      * @ORM\Id
-     * @ORM\ManyToOne(targetEntity="Training\ArticleBundle\Entity\CVArt")
+     * @ORM\ManyToOne(targetEntity="Urbanet\CvBundle\Entity\CVArt")
      */
     private $CVArt;
 
     /**
      * @ORM\Id
-     * @ORM\ManyToOne(targetEntity="Training\ArticleBundle\Entity\Competition")
+     * @ORM\ManyToOne(targetEntity="Urbanet\CvBundle\Entity\Competition")
      */
     private $Competition;
 
@@ -59,10 +59,10 @@ class Classement
     /**
      * Set CVArt
      *
-     * @param \Training\ArticleBundle\Entity\CVArt $cVArt
+     * @param \Urbanet\CvBundle\Entity\CVArt $cVArt
      * @return Classement
      */
-    public function setCVArt(\Training\ArticleBundle\Entity\CVArt $cVArt)
+    public function setCVArt(\Urbanet\CvBundle\Entity\CVArt $cVArt)
     {
         $this->CVArt = $cVArt;
     
@@ -72,7 +72,7 @@ class Classement
     /**
      * Get CVArt
      *
-     * @return \Training\ArticleBundle\Entity\CVArt 
+     * @return \Urbanet\CvBundle\Entity\CVArt 
      */
     public function getCVArt()
     {
@@ -82,10 +82,10 @@ class Classement
     /**
      * Set Competition
      *
-     * @param \Training\ArticleBundle\Entity\Competition $competition
+     * @param \Urbanet\CvBundle\Entity\Competition $competition
      * @return Classement
      */
-    public function setCompetition(\Training\ArticleBundle\Entity\Competition $competition)
+    public function setCompetition(\Urbanet\CvBundle\Entity\Competition $competition)
     {
         $this->Competition = $competition;
     
@@ -95,7 +95,7 @@ class Classement
     /**
      * Get Competition
      *
-     * @return \Training\ArticleBundle\Entity\Competition 
+     * @return \Urbanet\CvBundle\Entity\Competition 
      */
     public function getCompetition()
     {

@@ -1,0 +1,24 @@
+{% extends "::base.html.twig" %}
+
+{% block body %}
+<p><center><h1>Mon CV</h1></center></p>
+
+<header>
+<h2>
+{{ CVArt.Titre }}
+</h2>
+</header>
+
+<p>
+<img src="{{ CVArt.Photo }}">
+</p>
+
+<p>
+<a href="{{ path('urbanet_cv_editer', { id : CVArt.id}) }}" class="btn btn-success">Editer</a>
+</p>
+
+<h4>Information générales</h4>
+<hr>
+
+
+{% endblock %}

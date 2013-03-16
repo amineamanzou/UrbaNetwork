@@ -1,4 +1,17 @@
 urbanet_cv_homepage:
-    pattern:  /CV
-    defaults: { _controller: UrbanetCvBundle:Default:cv }
-
+    pattern: /CV
+    defaults: { _controller: UrbanetCvBundle:Default:index }
+    
+urbanet_cv_ajouter:
+    pattern: /CV/ajouter
+    defaults: { _controller: UrbanetCvBundle:Default:ajouter }
+    
+urbanet_cv_editer:
+    pattern: /CV/editer/{id}
+    defaults: { _controller: UrbanetCvBundle:Default:editer }
+    
+urbanet_cv_voir:
+    pattern: /CV/voir/{id}
+    defaults: { _controller: UrbanetCvBundle:Default:voir, id: 0 }
+    requirements :
+      id : \d+

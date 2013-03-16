@@ -1,6 +1,6 @@
 <?php
 
-namespace Training\ArticleBundle\Entity;
+namespace Urbanet\CvBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -8,19 +8,19 @@ use Doctrine\ORM\Mapping as ORM;
  * Evaluer
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="Training\ArticleBundle\Entity\EvaluerRepository")
+ * @ORM\Entity(repositoryClass="Urbanet\CvBundle\Entity\EvaluerRepository")
  */
 class Evaluer
 {
     /**
      * @ORM\Id
-     * @ORM\ManyToOne(targetEntity="Training\ArticleBundle\Entity\CVArt")
+     * @ORM\ManyToOne(targetEntity="Urbanet\CvBundle\Entity\CVArt")
      */
     private $CVArt;
 
     /**
      * @ORM\Id
-     * @ORM\ManyToOne(targetEntity="Training\ArticleBundle\Entity\Competence")
+     * @ORM\ManyToOne(targetEntity="Urbanet\CvBundle\Entity\Competence")
      */
     private $Competence;
 
@@ -59,10 +59,10 @@ class Evaluer
     /**
      * Set CVArt
      *
-     * @param \Training\ArticleBundle\Entity\CVArt $cVArt
+     * @param \Urbanet\CvBundle\Entity\CVArt $cVArt
      * @return Evaluer
      */
-    public function setCVArt(\Training\ArticleBundle\Entity\CVArt $cVArt)
+    public function setCVArt(\Urbanet\CvBundle\Entity\CVArt $cVArt)
     {
         $this->CVArt = $cVArt;
     
@@ -72,7 +72,7 @@ class Evaluer
     /**
      * Get CVArt
      *
-     * @return \Training\ArticleBundle\Entity\CVArt 
+     * @return \Urbanet\CvBundle\Entity\CVArt 
      */
     public function getCVArt()
     {
@@ -82,10 +82,10 @@ class Evaluer
     /**
      * Set Competence
      *
-     * @param \Training\ArticleBundle\Entity\Competence $competence
+     * @param \Urbanet\CvBundle\Entity\Competence $competence
      * @return Evaluer
      */
-    public function setCompetence(\Training\ArticleBundle\Entity\Competence $competence)
+    public function setCompetence(\Urbanet\CvBundle\Entity\Competence $competence)
     {
         $this->Competence = $competence;
     
@@ -95,7 +95,7 @@ class Evaluer
     /**
      * Get Competence
      *
-     * @return \Training\ArticleBundle\Entity\Competence 
+     * @return \Urbanet\CvBundle\Entity\Competence 
      */
     public function getCompetence()
     {
