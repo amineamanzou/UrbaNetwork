@@ -57,3 +57,35 @@ php app/console assetic:dump
 
 ## Ready !
 You can now use this project as a normal symfony 2 project.
+
+## Entity Notes :
+This the relations summary between the entity of the project.
+
+Relation One_To_One
+
+Artiste -> Mediath�que
+Artiste -> CVArt
+Crew    -> CVCrew
+Membre  -> Annonceur
+Membre  -> Artiste
+
+Relation Many_To_One
+
+CatPub  -> Annonce
+Annonce -> Membre
+
+Relation Many_To_Many
+
+Annonce -> Tag
+Artiste -> Discipline
+CVArt   -> Spectacle
+CVArt   -> Formation
+Mediatheque -> Video
+
+Relation Classe Association
+
+Annonce -> Estimer -> Competence
+Artiste -> Appartient -> Crew
+CVArt -> Classement -> Competicion
+CVArt   -> Evaluer -> Competence
+Artiste -> Appartient -> Crew
