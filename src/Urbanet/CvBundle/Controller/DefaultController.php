@@ -22,20 +22,21 @@ class DefaultController extends Controller
             
         $em = $this->getDoctrine()->getEntityManager();
         $CVArt = $em->getRepository("UrbanetCvBundle:CVArt")->findOneById($id);
+
         $Spectacle = $CVArt->getSpectacle();
         if(isset($Spectacle)){
         foreach($Spectacle as $Spectacle){
             $Spectacle->getId();
-            }   
+            }
         }
 
+        return $this->render('UrbanetCvBundle:Default:voir.html.twig', array(
+            'CVArt' => $CVArt,
+            'Spectacle' => $Spectacle->getId(),
+            ));
+        
+    }        
 
-   	    return $this->render('UrbanetCvBundle:Default:voir.html.twig', array(
-   	    	'CVArt' => $CVArt,
-            'Spectacle' => $Spectacle,
-   	    	));
-   	    
-    }
 
     public function ajouterAction()
     {
@@ -120,6 +121,7 @@ class DefaultController extends Controller
                 $Spectacle = $form->getData();
                 $em->persist($Spectacle);
                 $CVArt->addSpectacle($Spectacle);
+                $Spectacle->addCVArt($CVArt);
 
                 $em->flush();
             
@@ -141,7 +143,12 @@ class DefaultController extends Controller
 
         $form = $this->createForm(new SpectacleType(), $Spectacle);
         $request = $this->getRequest();
-        
+
+        $CVArt=$Spectacle->getCVArt();
+        foreach ($CVArt as $CVArt){
+            $CVArt->getId();
+        }
+
         if($request->isMethod('POST'))
         {
             $form->bindRequest($request);
@@ -151,16 +158,21 @@ class DefaultController extends Controller
                 $Spectacle = $form->getData();
                 $em->persist($Spectacle);
                 $em->flush();
-            
+
+                $CVArt=$Spectacle->getCVArt();
+                foreach ($CVArt as $CVArt){
+                    $CVArt->getId();
+                }
                 return $this->redirect(
                         $this->generateUrl("urbanet_cv_voir", array(
-                            'id' => $CVArt->getId(),    
+                            'id' =>$CVArt->getId(),    
                             )));
             }
         }
         
         return $this->render('UrbanetCvBundle:Default:editer_spectacle.html.twig', array(
-            'id'   => $CVArt->getId(),
+            'CVArtId' => $CVArt->getId(),  
+            'SpectacleId' => $Spectacle->getId(),
             'form' => $form->createView(),
         ));
     }
