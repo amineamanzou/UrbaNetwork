@@ -32,7 +32,7 @@ class DefaultController extends Controller
 
         return $this->render('UrbanetCvBundle:Default:voir.html.twig', array(
             'CVArt' => $CVArt,
-            'Spectacle' => $Spectacle->getId(),
+            'Spectacle' => $Spectacle,
             ));
         
     }        
@@ -175,5 +175,27 @@ class DefaultController extends Controller
             'SpectacleId' => $Spectacle->getId(),
             'form' => $form->createView(),
         ));
+    }
+
+
+
+
+    public function supprimer_spectacleAction(Spectacle $Spectacle)
+    {
+        $em = $this->getDoctrine()->getEntityManager();
+        
+        $CVArt=$Spectacle->getCVArt();
+        foreach ($CVArt as $CVArt){
+            $CVArt->getId();
+        }
+
+        $em -> remove($Spectacle); 
+        $em->flush();
+
+        return $this->redirect(
+                $this->generateUrl("urbanet_cv_voir", array(
+                'id' =>$CVArt->getId(),
+                )));
+  
     }
 }

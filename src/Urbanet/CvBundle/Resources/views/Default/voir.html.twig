@@ -30,10 +30,11 @@
 
 {% if Spectacle is defined %}
 	{% for Spectacle in CVArt.Spectacle %}
-         <p>{{ Spectacle.Id }} {{ Spectacle.Type }} {{ Spectacle.Libelle }} 
+        <p>{{ Spectacle.Id }} {{ Spectacle.Type }} {{ Spectacle.Libelle }} 
          	{{ Spectacle.Date|date("d/m/Y") }} {{ Spectacle.Lieu }} {{ Spectacle.Nbr }}
          	<a href="{{ path('urbanet_cv_editer_spectacle', { id : Spectacle.id}) }}" class="btn btn-success btn-mini">Editer</a>
-         </p>
+         	<a href="{{ path('urbanet_cv_supprimer_spectacle', { id : Spectacle.id}) }}" class="btn btn-danger btn-mini">Supprimer</a>
+        </p>
     {% endfor %}
 {% endif %}
 
