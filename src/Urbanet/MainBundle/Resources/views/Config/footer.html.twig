@@ -1,46 +1,57 @@
-<footer>
-    <div class="row-fluid">
-        <div class="span foot"></div>
-        <div class="span3 foot">
-            <p><a href="">
-            {% image '%kernel.root_dir%/../src/Urbanet/MainBundle/Resources/public/images/smallLogo.png' %}
-                <a href="{{ path('urbanet_main_homepage') }}"><img src="{{ asset_url }}" alt="Urbanetwork logo"/></a>
-            {% endimage %}
-                    
-            </a></p>
-            <p>
-            <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US">
-                <img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" />
-            </a><br />
-            This work is licensed under a 
-            <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US">
-                Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License
-            </a>.</p>
-            <p>&copy; urbanetwork.com 2012-2013.</p>
+<div id="footer">
+    <div class="container">
+        <div class="row-fluid">
+            
+            <div class="span2 foot">
+                <p><a href="">
+                {% image '%kernel.root_dir%/../src/Urbanet/MainBundle/Resources/public/images/smallLogo.png' %}
+                    <a href="{{ path('urbanet_main_homepage') }}"><img src="{{ asset_url }}" alt="Urbanetwork logo"/></a>
+                {% endimage %}
+                </a></p>
+            </div>            
+            
+            <div class="span2 foot">
+                <h3>Politique</h3>
+                <ul>
+                    <li><a href="#" >Disclaimer</a></li>
+                    <li><a href="#" >Copyright</a></li>
+                    <li><a href="#" >Privacy</a></li>
+                </ul>
+            </div>
+            
+            <div class="span2 foot">
+                <h3>Compagnie</h3>
+                <ul>
+                    <li><a href="{{ path('urbanet_main_apropos') }}" >A Propos</a></li>
+                    <li><a href="{{ path('urbanet_main_contact') }}" >Contact</a></li>
+                    <li><a href="{{ path('urbanet_main_suggestion') }}" >Suggestion</a></li>
+                </ul>
+            </div>
+            
+            <div class="span3 foot">
+                <h3>Communautées</h3>
+                <ul>
+                    <li><a href="http://www.facebook.com/pages/Urbanetwork" >Facebook</a></li>
+                    <li><a href="https://plus.google.com/Urbanetwork" >Google+</a></li>
+                    <li><a href="http://www.twitter.com/Urbanetwork" >Twitter</a></li>
+                    <li><a href="http://in.linkedin.com/in/Urbanetwork" >Linkedin</a></li>
+                </ul>
+            </div>
+
+            <div class="span3 foot">
+                <h3>License 
+                    <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US">
+                        <img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" />
+                    </a>
+                </h3>
+                <p>
+                
+                This work is licensed under a 
+                <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US">
+                    Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License
+                </a>.</p>
+                <p>&copy; urbanetwork.com 2012-2013.</p>
+            </div>
         </div>
-        <div class="span2 foot">
-            <h3>Politique</h3>
-            <ul>
-                <li><a href="#" >Disclaimer</a></li>
-                <li><a href="#" >Copyright</a></li>
-                <li><a href="#" >Privacy</a></li>
-            </ul>
-        </div>
-        <div class="span2 foot">
-            <h3>Compagnie</h3>
-            <ul>
-                <li><a href="{{ path('urbanet_main_apropos') }}" >A Propos</a></li>
-                <li><a href="{{ path('urbanet_main_contact') }}" >Contact</a></li>
-                <li><a href="{{ path('urbanet_main_suggestion') }}" >Suggestion</a></li>
-            </ul>
-        </div>
-        <div class="span2 foot">
-            <h3>Communautées</h3>
-            <ul>
-                <li><a href="http://www.facebook.com/pages/Urbanetwork" >Facebook</a></li>
-                <li><a href="https://plus.google.com/Urbanetwork" >Google+</a></li>
-                <li><a href="http://www.twitter.com/Urbanetwork" >Twitter</a></li>
-                <li><a href="http://in.linkedin.com/in/Urbanetwork" >Linkedin</a></li>
-            </ul>
-	</div>        
-</footer>
+    </div>
+</div>
