@@ -1,7 +1,3 @@
 urbanet_user_homepage:
     pattern:  /login
-    defaults: { _controller: UrbanetUserBundle::layout }
-
-urbanet_user_nosartistes:
-    pattern:  /Artistes/Nos-Artistes
-    defaults: { _controller: UrbanetUserBundle:Default:nosartistes }
+    defaults: { _controller: FOSUserBundle:Security:login }

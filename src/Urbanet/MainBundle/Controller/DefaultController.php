@@ -15,4 +15,9 @@ class DefaultController extends Controller
     {
         return $this->render('UrbanetMainBundle:Default:Recherche.html.twig');
     }
+    
+    public function nosArtistesAction()
+    {
+        return $this->render('UrbanetMainBundle:Default:NosArtistes.html.twig');
+    }
 }

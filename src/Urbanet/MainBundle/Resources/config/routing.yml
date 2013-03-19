@@ -6,6 +6,10 @@ urbanet_main_recherche:
     pattern:  /Recherche
     defaults: { _controller: UrbanetMainBundle:Default:recherche }
 
+urbanet_user_nosartistes:
+    pattern:  /Artistes/Nos-Artistes
+    defaults: { _controller: UrbanetMainBundle:Default:nosartistes }
+
 urbanet_main_apropos:
     pattern:  /Compagnie/A-Propos
     defaults: { _controller: UrbanetMainBundle:Compagnie:apropos }
