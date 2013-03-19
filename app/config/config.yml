@@ -107,6 +107,12 @@ fos_user:
             #handler:            fos_user.profile.form.handler.default
             name:               fos_user_profile_form
             #validation_groups:  [Authentication] # Please note : this is not the default value
+fos_facebook:
+    alias:  facebook
+    app_id: 454423791294562
+    secret: d06bf605e804f35862f0cf2f7d42ec0d
+    cookie: true
+    permissions: [email, user_birthday, user_location]
 
 # SonataAdmin Configuration
 sonata_admin:

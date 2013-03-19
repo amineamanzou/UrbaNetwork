@@ -40,7 +40,14 @@ security:
                 failure_path:   null
             logout:       true
             anonymous:    true
- 
+        
+#        public:
+#            # since anonymous is allowed users will not be forced to login
+#            pattern:      ^/.*
+#            fos_facebook:
+#                server_url: "http://localhost/Urbanetwork/"
+#            anonymous: true
+            
     access_control:
         # URL of FOSUserBundle which need to be available to anonymous users
         - { path: ^/_wdt, role: IS_AUTHENTICATED_ANONYMOUSLY }
@@ -59,6 +66,8 @@ security:
         # Secured part of the site
         # This config requires being logged for the whole site and having the admin role for the admin part.
         # Change these rules to adapt them to your needs
+        # This is the route secured with fos_facebook
+        #- { path: ^/secured/.*, role: [IS_AUTHENTICATED_FULLY] } 
         - { path: ^/admin, role: [ROLE_ADMIN, ROLE_SONATA_ADMIN] }
         - { path: ^/.*, role: IS_AUTHENTICATED_ANONYMOUSLY }
  
