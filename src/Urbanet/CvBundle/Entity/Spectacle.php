@@ -13,6 +13,11 @@ use Doctrine\ORM\Mapping as ORM;
 class Spectacle
 {
     /**
+     * @ORM\ManyToMany(targetEntity="Urbanet\CvBundle\Entity\CVArt", mappedBy="Spectacle")
+     */
+    private $CVArt;
+
+    /**
      * @var integer
      *
      * @ORM\Column(name="id", type="integer")
@@ -180,5 +185,45 @@ class Spectacle
     public function getNbr()
     {
         return $this->Nbr;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->CVArt = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+    
+    /**
+     * Add CVArt
+     *
+     * @param \Urbanet\CvBundle\Entity\CVArt $cVArt
+     * @return Spectacle
+     */
+    public function addCVArt(\Urbanet\CvBundle\Entity\CVArt $cVArt)
+    {
+        $this->CVArt[] = $cVArt;
+    
+        return $this;
+    }
+
+    /**
+     * Remove CVArt
+     *
+     * @param \Urbanet\CvBundle\Entity\CVArt $cVArt
+     */
+    public function removeCVArt(\Urbanet\CvBundle\Entity\CVArt $cVArt)
+    {
+        $this->CVArt->removeElement($cVArt);
+    }
+
+    /**
+     * Get CVArt
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getCVArt()
+    {
+        return $this->CVArt;
     }
 }
