@@ -41,6 +41,7 @@
         "sonata-project/notification-bundle": "2.2.*@dev",
         "knplabs/gaufrette":"dev-master",
         "sonata-project/media-bundle": "2.2.*@dev",
+        "sonata-project/formatter-bundle": "2.2.*@dev",
 
 	"twitter/bootstrap": "dev-master",
 	"leafo/lessphp": "dev-master",
