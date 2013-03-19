@@ -13,7 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
 class CVArt
 {
     /**
-     * @ORM\ManyToMany(targetEntity="Urbanet\CvBundle\Entity\Spectacle", cascade={"persist"})
+     * @ORM\ManyToMany(targetEntity="Urbanet\CvBundle\Entity\Spectacle", cascade={"persist"}, inversedBy="CVArt")
      */
     private $Spectacle;
 
