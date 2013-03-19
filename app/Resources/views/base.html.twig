@@ -42,7 +42,12 @@
             {% javascripts  '%kernel.root_dir%/../vendor/twitter/bootstrap/docs/assets/js/jquery.js' %}
                    <script src="{{ asset_url }}" type="text/javascript"></script>
             {% endjavascripts %}
-                   
+            {% javascripts  '%kernel.root_dir%/../src/Urbanet/CvBundle/Resources/public/js/cv.js' %}
+                   <script src="{{ asset_url }}" type="text/javascript"></script>
+            {% endjavascripts %}
+            {% javascripts  '%kernel.root_dir%/../src/Urbanet/CvBundle/Resources/public/js/jquery-ui.js' %}
+                   <script src="{{ asset_url }}" type="text/javascript"></script>
+            {% endjavascripts %}       
         {% endblock %}
     </body>
 </html>
