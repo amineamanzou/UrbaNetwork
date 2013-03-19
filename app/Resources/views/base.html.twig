@@ -5,19 +5,25 @@
         <title>{% block title %}UrbaNetwork | Être connu c'est cool se faire connaître c'est mieux.{% endblock %}</title>
         {% block stylesheets %}
             {% stylesheets '%kernel.root_dir%/../vendor/twitter/bootstrap/less/bootstrap.less'
-                            '%kernel.root_dir%/../vendor/twitter/bootstrap/less/responsive.less' 
+                           '%kernel.root_dir%/../vendor/twitter/bootstrap/less/responsive.less'
+                           '%kernel.root_dir%/../src/Urbanet/MainBundle/Resources/public/css/sticky-footer.css'
                             %}
                 <link rel="stylesheet" href="{{ asset_url }}" media="screen" />
             {% endstylesheets %}
-        {% endblock %}
+        {% endblock %}     
     </head>
     <body>
+        <div id="wrap">
         {% block header%}
             {% include 'UrbanetMainBundle:Config:header.html.twig' %}
         {% endblock %}
-        <hr>
+        
+            <div class="container">
         {% block body %}{% endblock %}
-        <hr>
+            </div>
+            <div id="push"></div>
+        </div>
+        
         {% block footer %}
             {% include 'UrbanetMainBundle:Config:footer.html.twig' %}
         {% endblock %}
