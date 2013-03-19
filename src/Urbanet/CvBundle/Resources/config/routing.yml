@@ -33,3 +33,21 @@ urbanet_cv_supprimer_spectacle:
     defaults: { _controller: UrbanetCvBundle:Default:supprimer_spectacle }
     requirements : 
       id : \d+
+
+urbanet_cv_ajouter_formation:
+    pattern: /CV/ajouter_formation/{id}
+    defaults: { _controller: UrbanetCvBundle:Default:ajouter_formation }
+    requirements : 
+      id : \d+
+
+urbanet_cv_editer_formation:
+    pattern:  /CV/editer_formation/{id}
+    defaults: { _controller: UrbanetCvBundle:Default:editer_formation }
+    requirements :
+      id : \d+
+
+urbanet_cv_supprimer_formation:
+    pattern: /CV/supprimer_formation/{id}
+    defaults: { _controller: UrbanetCvBundle:Default:supprimer_formation }
+    requirements : 
+      id : \d+

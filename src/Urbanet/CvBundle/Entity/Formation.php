@@ -13,6 +13,11 @@ use Doctrine\ORM\Mapping as ORM;
 class Formation
 {
     /**
+     * @ORM\ManyToMany(targetEntity="Urbanet\CvBundle\Entity\CVArt", mappedBy="Formation")
+     */
+    private $CVArt;
+
+    /**
      * @var integer
      *
      * @ORM\Column(name="id", type="integer")
@@ -210,5 +215,45 @@ class Formation
     public function getIntervenant()
     {
         return $this->Intervenant;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->CVArt = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+    
+    /**
+     * Add CVArt
+     *
+     * @param \Urbanet\CvBundle\Entity\CVArt $cVArt
+     * @return Formation
+     */
+    public function addCVArt(\Urbanet\CvBundle\Entity\CVArt $cVArt)
+    {
+        $this->CVArt[] = $cVArt;
+    
+        return $this;
+    }
+
+    /**
+     * Remove CVArt
+     *
+     * @param \Urbanet\CvBundle\Entity\CVArt $cVArt
+     */
+    public function removeCVArt(\Urbanet\CvBundle\Entity\CVArt $cVArt)
+    {
+        $this->CVArt->removeElement($cVArt);
+    }
+
+    /**
+     * Get CVArt
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getCVArt()
+    {
+        return $this->CVArt;
     }
 }

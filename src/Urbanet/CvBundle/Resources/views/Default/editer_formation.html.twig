@@ -1,0 +1,23 @@
+{% extends "::base.html.twig" %}
+
+{% block body %}
+
+<p><center><h1>Mon CV</h1></center></p>
+
+<h2>Editer Mon Cv</h2>
+<hr>
+<h4>Formation</h4>
+
+
+<div class="container">
+    <form class="form-horizontal" action="{{ path("urbanet_cv_editer_formation", { id : FormationId }) }}" method="post">
+        {{ form_widget(form) }}
+    
+    		<input type="submit" class="btn btn-success" value="Editer"/>
+            <input class="btn btn-danger" type="reset" value="Annuler">
+
+           <p><a href="{{ path('urbanet_cv_voir', { id : CVArtId }) }}">Retour</a></p>
+    </form>
+</div>
+
+{% endblock %}

@@ -41,8 +41,17 @@
 <hr>
 <h4>Formation</h4>
 <p>
-	<a href="{{ path('urbanet_cv_editer', { id : CVArt.id}) }}">Ajouter une formation</a>
+	<a href="{{ path('urbanet_cv_ajouter_formation', { id : CVArt.id}) }}">Ajouter une formation</a>
 </p>
+{% if Formation is defined %}
+	{% for Formation in CVArt.Formation %}
+        <p>{{ Formation.Id }} {{ Formation.Type }} {{ Formation.Libelle }} 
+         	{{ Formation.Date|date("d/m/Y") }} {{ Formation.Lieu }} {{ Formation.Intervenant }} {{ Formation.Duree }}
+         	<a href="{{ path('urbanet_cv_editer_formation', { id : Formation.id}) }}" class="btn btn-success btn-mini">Editer</a>
+         	<a href="{{ path('urbanet_cv_supprimer_formation', { id : Formation.id}) }}" class="btn btn-danger btn-mini">Supprimer</a>
+        </p>
+    {% endfor %}
+{% endif %}
 
 <hr>
 <h4>Competence</h4>
