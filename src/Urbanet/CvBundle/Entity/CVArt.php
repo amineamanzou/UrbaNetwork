@@ -18,7 +18,7 @@ class CVArt
     private $Spectacle;
 
     /**
-     * @ORM\ManyToMany(targetEntity="Urbanet\CvBundle\Entity\Formation", cascade={"persist"})
+     * @ORM\ManyToMany(targetEntity="Urbanet\CvBundle\Entity\Formation", cascade={"persist"}, inversedBy="CVArt")
      */
     private $Formation;
 

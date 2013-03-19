@@ -7,6 +7,8 @@ use Urbanet\CvBundle\Entity\CVArt;
 use Urbanet\CvBundle\Form\CVArtType;
 use Urbanet\CvBundle\Entity\Spectacle;
 use Urbanet\CvBundle\Form\SpectacleType;
+use Urbanet\CvBundle\Entity\Formation;
+use Urbanet\CvBundle\Form\FormationType;
 
 class DefaultController extends Controller
 {
@@ -22,7 +24,7 @@ class DefaultController extends Controller
             
         $em = $this->getDoctrine()->getEntityManager();
         $CVArt = $em->getRepository("UrbanetCvBundle:CVArt")->findOneById($id);
-
+        
         $Spectacle = $CVArt->getSpectacle();
         if(isset($Spectacle)){
         foreach($Spectacle as $Spectacle){
@@ -30,9 +32,17 @@ class DefaultController extends Controller
             }
         }
 
+        $Formation = $CVArt->getFormation();
+        if(isset($Formation)){
+        foreach($Formation as $Formation){
+            $Formation->getId();
+            }
+        }
+
         return $this->render('UrbanetCvBundle:Default:voir.html.twig', array(
             'CVArt' => $CVArt,
             'Spectacle' => $Spectacle,
+            'Formation' => $Formation,
             ));
         
     }        
@@ -190,6 +200,102 @@ class DefaultController extends Controller
         }
 
         $em -> remove($Spectacle); 
+        $em->flush();
+
+        return $this->redirect(
+                $this->generateUrl("urbanet_cv_voir", array(
+                'id' =>$CVArt->getId(),
+                )));
+  
+    }
+
+    public function ajouter_formationAction($id)
+    {
+        $em = $this->getDoctrine()->getEntityManager();
+
+        $Formation = new Formation();
+        $CVArt = $em->getRepository("UrbanetCvBundle:CVArt")->findOneById($id);
+
+        $form = $this->createForm(new FormationType(), $Formation);
+        $request = $this->getRequest();
+        
+        if($request->isMethod('POST'))
+        {
+            $form->bindRequest($request);
+            
+            if ($form->isValid()){
+
+                $Formation = $form->getData();
+                $em->persist($Formation);
+                $CVArt->addFormation($Formation);
+                $Formation->addCVArt($CVArt);
+
+                $em->flush();
+            
+                return $this->redirect($this->generateUrl("urbanet_cv_voir", array(
+                            'id' => $CVArt->getId(),    
+                            )));
+            }
+            
+        }
+       return $this->render('UrbanetCvBundle:Default:ajouter_formation.html.twig', array(
+            'id'   => $CVArt->getId(),
+            'form' => $form->createView(),
+        ));
+   }
+
+    public function editer_formationAction(Formation $Formation)
+    {
+        $em = $this->getDoctrine()->getEntityManager();
+
+        $form = $this->createForm(new FormationType(), $Formation);
+        $request = $this->getRequest();
+        $CVArt=$Formation->getCVArt();
+        foreach ($CVArt as $CVArt){
+            $CVArt->getId();
+        }
+
+        if($request->isMethod('POST'))
+        {
+            $form->bindRequest($request);
+            
+            if ($form->isValid()){
+
+                $Formation = $form->getData();
+                $em->persist($Formation);
+                $em->flush();
+
+                $CVArt=$Formation->getCVArt();
+                foreach ($CVArt as $CVArt){
+                    $CVArt->getId();
+                }
+                return $this->redirect(
+                        $this->generateUrl("urbanet_cv_voir", array(
+                            'id' =>$CVArt->getId(),    
+                            )));
+            }
+        }
+        
+        return $this->render('UrbanetCvBundle:Default:editer_formation.html.twig', array(
+            'CVArtId' => $CVArt->getId(),  
+            'FormationId' => $Formation->getId(),
+            'form' => $form->createView(),
+        ));
+    }
+
+
+
+
+    public function supprimer_formationAction(Formation $Formation)
+    {
+        $em = $this->getDoctrine()->getEntityManager();
+        
+        $CVArt=$Formation->getCVArt();
+        foreach ($CVArt as $CVArt){
+            $CVArt->getId();
+        }
+
+        $em -> remove($Formation); 
         $em->flush();
 
         return $this->redirect(
