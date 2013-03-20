@@ -10,3 +10,7 @@ web/bundles/*
 
 #netbeans
 /nbproject/*
+
+# Personnal parameters, Edit parameters.yml.dist instead
+
+app/config/parameters.yml
