@@ -1,5 +1,8 @@
 {% extends "::base.html.twig" %}
 
+{% form_theme form _self %}
+
+
 {% block body %}
 
 <div class="container">
@@ -15,35 +18,22 @@
             </div><!--end hero unit -->
             
             <section class="span6">
-                <form>
+                <form action="{{ path("urbanet_main_contact") }}" method="POST">
                     <div class="control-group">
-                        <label class="control-label" for="inputEmail"><i class="icon-user"></i> Nom et Prénom</label>
-                        <div class="controls controls-row">
-                            <input type="text" class="input-xxlarge" id="inputEmail" placeholder="Personne Cool">
-                        </div>
+                        {{ form_row(form.Nom) }}
+                        {{ form_row(form.Prenom) }}
                     </div>
-
                     <div class="control-group">
-                        <label class="control-label" for="inputEmail"><i class="icon-envelope"></i> Email</label>
-                        <div class="controls">
-                            <input type="text" class="input-xxlarge" id="inputEmail" placeholder="nomprenom@exemple.com">
-                        </div>
+                        {{ form_row(form.Email) }}   
                     </div>
-
                     <div class="control-group">
-                        <label class="control-label" for="inputEmail"><i class="icon-question-sign"></i> Objet</label>
-                        <div class="controls">
-                            <input type="text" class="input-xxlarge" id="inputSubject" placeholder="Comment allez vous ?">
-                        </div>
+                        {{ form_row(form.Objet) }}   
                     </div>
-
-                    <div class="control-group">
-                        <label class="control-label" for="inputEmail"><i class="icon-pencil"></i> Message</label>
-                        <div class="controls">
-                            <textarea rows="6" class="input-xxlarge" placeholder=""></textarea>
-                        </div>
+                    <div class="input-xxlarge control-group">
+                        {{ form_row(form.Message) }}
                     </div>
-
+                    
+                    {{ form_row(form._token) }}
                     <div class="control-group">
                         <div class="controls">
                             <button type="submit" class="btn btn-success"> Envoyer </button>

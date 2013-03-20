@@ -90,12 +90,13 @@ sonata_user:
 
 # Swiftmailer Configuration
 swiftmailer:
-    transport: "%mailer_transport%"
-    host:      "%mailer_host%"
-    username:  "%mailer_user%"
-    password:  "%mailer_password%"
-    spool:     { type: memory }
-
+    transport:  smtp
+    encryption: ssl
+    auth_mode:  login
+    host:       smtp.gmail.com
+    username:   "%mailer_user%"
+    password:   "%mailer_password%"
+    
 # FosUser Configuration
 fos_user:
     db_driver: orm
@@ -107,6 +108,15 @@ fos_user:
             #handler:            fos_user.profile.form.handler.default
             name:               fos_user_profile_form
             #validation_groups:  [Authentication] # Please note : this is not the default value
+    registration:
+        confirmation:
+            enabled:    true
+            template:   FOSUserBundle:Registration:email.txt.twig
+        form:
+            type:               fos_user_registration
+            name:               fos_user_registration_form
+            validation_groups:  [Registration, Default]
+            
 fos_facebook:
     alias:  facebook
     app_id: 454423791294562
