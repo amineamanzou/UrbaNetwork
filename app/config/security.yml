@@ -60,8 +60,9 @@ security:
         - { path: ^/admin/login-check$, role: IS_AUTHENTICATED_ANONYMOUSLY }
         # -> end
  
-        - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/inscription, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/CV, role: [ROLE_ARTISTE] }
  
         # Secured part of the site
         # This config requires being logged for the whole site and having the admin role for the admin part.
@@ -72,5 +73,8 @@ security:
         - { path: ^/.*, role: IS_AUTHENTICATED_ANONYMOUSLY }
  
     role_hierarchy:
-        ROLE_ADMIN:       [ROLE_USER, ROLE_SONATA_ADMIN]
+        ROLE_USER:
+        ROLE_ANNONCEUR:   [ROLE_USER]
+        ROLE_ARTISTE:     [ROLE_ANNONCEUR, ROLE_USER]
+        ROLE_ADMIN:       [ROLE_ARTISTE, ROLE_USER, ROLE_SONATA_ADMIN]
         ROLE_SUPER_ADMIN: [ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
