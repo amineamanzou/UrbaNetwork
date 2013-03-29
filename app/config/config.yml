@@ -2,6 +2,15 @@ imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
 
+services:
+    my.facebook.user:
+      class: Urbanet\UserBundle\Security\User\Provider\FacebookProvider
+      arguments:
+          facebook: "@fos_facebook.api"
+          userManager: "@fos_user.user_manager"
+          validator: "@validator"
+          container: "@service_container"
+          
 framework:
     #esi:             ~
     translator:      { fallback: "%locale%" }
@@ -122,7 +131,7 @@ fos_facebook:
     app_id: 454423791294562
     secret: d06bf605e804f35862f0cf2f7d42ec0d
     cookie: true
-    permissions: [email, user_birthday, user_location]
+    permissions: [email]
 
 # SonataAdmin Configuration
 sonata_admin:

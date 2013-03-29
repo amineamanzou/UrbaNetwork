@@ -4,6 +4,8 @@ jms_security_extra:
 
 security:
     providers:
+        my_fos_facebook_provider:
+            id: my.facebook.user
         fos_userbundle:
             id: fos_user.user_provider.username
  
@@ -40,13 +42,19 @@ security:
                 failure_path:   null
             logout:       true
             anonymous:    true
+            fos_facebook:
+                server_url: "http://urbanetwork.com.localhost/"
+                login_path: /login
+                check_path: /login_fb_check
+                default_target_path: /
+                provider: my_fos_facebook_provider
         
-#        public:
-#            # since anonymous is allowed users will not be forced to login
-#            pattern:      ^/.*
-#            fos_facebook:
-#                server_url: "http://localhost/Urbanetwork/"
-#            anonymous: true
+        public:
+            # since anonymous is allowed users will not be forced to login
+            pattern:      ^/.*
+            fos_facebook:
+                server_url: "http://urbanetwork.com.localhost/"
+            anonymous: true
             
     access_control:
         # URL of FOSUserBundle which need to be available to anonymous users
