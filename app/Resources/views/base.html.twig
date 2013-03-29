@@ -28,6 +28,9 @@
             {% include 'UrbanetMainBundle:Config:footer.html.twig' %}
         {% endblock %}
         {% block javascripts %}
+            {% javascripts  '%kernel.root_dir%/../src/Urbanet/MainBundle/Resources/public/js/jquery-1.9.1.js' %}
+                   <script src="{{ asset_url }}" type="text/javascript"></script>
+            {% endjavascripts %}
             {% javascripts  '%kernel.root_dir%/../vendor/twitter/bootstrap/docs/assets/js/bootstrap.js' 
                             '%kernel.root_dir%/../vendor/twitter/bootstrap/js/bootstrap-transition.js'
                             '%kernel.root_dir%/../vendor/twitter/bootstrap/js/bootstrap-alert.js'
@@ -43,9 +46,6 @@
                             '%kernel.root_dir%/../vendor/twitter/bootstrap/js/bootstrap-typeahead.js'
                             '%kernel.root_dir%/../vendor/twitter/bootstrap/js/bootstrap-affix.js'
                              %}
-                   <script src="{{ asset_url }}" type="text/javascript"></script>
-            {% endjavascripts %}
-            {% javascripts  '%kernel.root_dir%/../vendor/twitter/bootstrap/docs/assets/js/jquery.js' %}
                    <script src="{{ asset_url }}" type="text/javascript"></script>
             {% endjavascripts %}
             {% javascripts  '%kernel.root_dir%/../src/Urbanet/CvBundle/Resources/public/js/cv.js' %}
