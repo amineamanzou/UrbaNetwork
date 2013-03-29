@@ -1,6 +1,23 @@
 {% extends "UrbanetUserBundle::layout.html.twig" %}
 
 {% block fos_user_content %}
+        <script>
+            function goLogIn(){
+                window.location = "{{ path('_security_check') }}";
+            }
+
+            function onFbInit() {
+                if (typeof(FB) != 'undefined' && FB != null ) {
+                    FB.Event.subscribe('auth.statusChange', function(response) {
+                        if (response.session || response.authResponse) {
+                            setTimeout(goLogIn, 500);
+                        } else {
+                            window.location = "{{ path('_security_logout') }}";
+                        }
+                    });
+                }
+            }
+        </script>
 {% if error %}
     <div>{{ error|trans({}, 'FOSUserBundle') }}</div>
 {% endif %}
@@ -25,5 +42,8 @@
 
             <input type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans({}, 'FOSUserBundle') }}" />
         </form>
+    </div>
+    <div id="social_login">        
+            {{ facebook_login_button({'autologoutlink': false}) }}
     </div>
 {% endblock fos_user_content %}
