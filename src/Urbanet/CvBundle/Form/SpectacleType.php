@@ -13,7 +13,8 @@ class SpectacleType extends AbstractType
         $builder
             ->add('Type')
             ->add('Libelle')
-            ->add('Date')
+            ->add('Date','date', array(
+            'years' => range(date('Y')-40, date('Y'))))
             ->add('Lieu')
             ->add('Nbr')
         ;
