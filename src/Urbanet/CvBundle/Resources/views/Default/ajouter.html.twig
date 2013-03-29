@@ -10,8 +10,21 @@
 
 <div class="container">
     <form class="form-horizontal" action="{{ path("urbanet_cv_ajouter") }}" method="post">
-        {{ form_widget(form) }}
-    
+        
+    	{{ form_errors(form) }}
+		<div>
+		    {{ form_label(form.Titre,'Titre du CV') }}
+		    {{ form_errors(form.Titre) }}
+		    {{ form_widget(form.Titre) }}
+		</div>
+
+		<div>
+		    {{ form_label(form.Photo,'Photo de profil') }}
+		    {{ form_errors(form.Photo) }}
+		    {{ form_widget(form.Photo) }}
+		</div>
+
+{{ form_rest(form) }}
     
             <input class="btn btn-primary" type="submit" value="Ajouter">
             <input class="btn btn-danger" type="button" value="Effacer">

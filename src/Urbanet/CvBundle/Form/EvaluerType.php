@@ -6,30 +6,27 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
-class FormationType extends AbstractType
+class EvaluerType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('Type')
-            ->add('Libelle')
-            ->add('Date','date', array(
-            'years' => range(date('Y')-40, date('Y'))))
-            ->add('Lieu')
-            ->add('Duree')
-            ->add('Intervenant')
+            ->add('id')
+            ->add('Niveau')
+            ->add('CVArt')
+            ->add('Competence')
         ;
     }
 
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'Urbanet\CvBundle\Entity\Formation'
+            'data_class' => 'Urbanet\CvBundle\Entity\Evaluer'
         ));
     }
 
     public function getName()
     {
-        return 'urbanet_cvbundle_formationtype';
+        return 'urbanet_cvbundle_evaluertype';
     }
 }

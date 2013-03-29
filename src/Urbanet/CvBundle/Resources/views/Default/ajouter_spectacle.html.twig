@@ -10,7 +10,25 @@
 
 <div class="container">
     <form class="form-horizontal" action="{{ path("urbanet_cv_ajouter_spectacle", { id: id}) }}" method="post">
-        {{ form_widget(form) }}
+     {{ form_errors(form) }}
+		<div>
+		    {{ form_label(form.Type,'Type de spectacle') }}
+		    {{ form_errors(form.Type) }}
+		    {{ form_widget(form.Type) }}
+		</div>
+
+		<div>
+		    {{ form_label(form.Libelle,'Nom du spectacle') }}
+		    {{ form_errors(form.Libelle) }}
+		    {{ form_widget(form.Libelle) }}
+		</div>
+		<div>
+		    {{ form_label(form.Nbr,'Nombre de spectateurs') }}
+		    {{ form_errors(form.Nbr) }}
+		    {{ form_widget(form.Nbr) }}
+		</div>
+
+	{{ form_rest(form) }}
 
             <input class="btn btn-primary" type="submit" value="Ajouter">
             <input class="btn btn-danger" type="button" value="Effacer">
