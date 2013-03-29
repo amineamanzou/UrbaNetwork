@@ -9,6 +9,8 @@ use Urbanet\CvBundle\Entity\Spectacle;
 use Urbanet\CvBundle\Form\SpectacleType;
 use Urbanet\CvBundle\Entity\Formation;
 use Urbanet\CvBundle\Form\FormationType;
+use Urbanet\CvBundle\Entity\Competence;
+use Urbanet\CvBundle\Form\CompetenceType;
 
 class DefaultController extends Controller
 {
@@ -304,4 +306,40 @@ class DefaultController extends Controller
                 )));
   
     }
+
+
+    public function ajouter_competenceAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $Competence = new Competence();
+
+        $CVArt = $em->getRepository("UrbanetCvBundle:CVArt")->findOneById($id);
+
+        $form = $this->createForm(new CompetenceType(), $Competence);
+        $request = $this->getRequest();
+        
+        if($request->isMethod('POST'))
+        {
+            $form->bindRequest($request);
+            
+            if ($form->isValid()){
+
+                $Competence = $form->getData();
+                $em->persist($Competence);
+                $CVArt->addCompetence($Competence);
+                $Competence->addCVArt($CVArt);
+
+                $em->flush();
+            
+                return $this->redirect($this->generateUrl("urbanet_cv_voir", array(
+                            'id' => $CVArt->getId(),    
+                            )));
+            }
+            
+        }
+       return $this->render('UrbanetCvBundle:Default:ajouter_competence.html.twig', array(
+            'id'   => $CVArt->getId(),
+            'form' => $form->createView(),
+        ));
+   }
 }

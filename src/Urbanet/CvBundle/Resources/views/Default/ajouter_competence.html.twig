@@ -4,19 +4,13 @@
 
 <p><center><h1>Mon CV</h1></center></p>
 
-<h2>Ajouter une formation à mon Cv</h2>
+<h2>Ajouter une competence à mon Cv</h2>
 <hr>
 
 
 <div class="container">
-    <form class="form-horizontal" action="{{ path("urbanet_cv_ajouter_formation", { id: id}) }}" method="post">
-             {{ form_errors(form) }}
-		<div>
-		    {{ form_label(form.Intervenant,'Nom de l\'intervenant') }}
-		    {{ form_errors(form.Intervenant) }}
-		    {{ form_widget(form.Intervenant) }}
-		</div>
-	{{ form_rest(form) }}
+    <form class="form-horizontal" action="{{ path("urbanet_cv_ajouter_competence", { id: id}) }}" method="post">
+        {{ form_widget(form) }}
 
             <input class="btn btn-primary" type="submit" value="Ajouter">
             <input class="btn btn-danger" type="button" value="Effacer">

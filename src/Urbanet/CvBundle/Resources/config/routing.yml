@@ -51,3 +51,21 @@ urbanet_cv_supprimer_formation:
     defaults: { _controller: UrbanetCvBundle:Default:supprimer_formation }
     requirements : 
       id : \d+
+
+urbanet_cv_ajouter_competence:
+    pattern: /CV/ajouter_competence/{id}
+    defaults: { _controller: UrbanetCvBundle:Default:ajouter_competence }
+    requirements : 
+      id : \d+
+
+urbanet_cv_editer_competence:
+    pattern:  /CV/editer_competence/{id}
+    defaults: { _controller: UrbanetCvBundle:Default:editer_competence }
+    requirements :
+      id : \d+
+
+urbanet_cv_supprimer_competence:
+    pattern: /CV/supprimer_competence/{id}
+    defaults: { _controller: UrbanetCvBundle:Default:supprimer_competence }
+    requirements : 
+      id : \d+

@@ -13,17 +13,24 @@ use Doctrine\ORM\Mapping as ORM;
 class Evaluer
 {
     /**
-     * @ORM\Id
      * @ORM\ManyToOne(targetEntity="Urbanet\CvBundle\Entity\CVArt")
+     * @ORM\JoinColumn(nullable=false)
      */
     private $CVArt;
 
     /**
-     * @ORM\Id
      * @ORM\ManyToOne(targetEntity="Urbanet\CvBundle\Entity\Competence")
+     * @ORM\JoinColumn(nullable=false)
      */
     private $Competence;
 
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     */
+    private $id;
 
     /**
      * @var integer
@@ -100,5 +107,15 @@ class Evaluer
     public function getCompetence()
     {
         return $this->Competence;
+    }
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
     }
 }
