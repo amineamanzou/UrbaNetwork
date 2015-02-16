@@ -1,7 +1,13 @@
 urbanet_cv_homepage:
     pattern:  /CV
-    defaults: { _controller: UrbanetCvBundle:Default:cv }
+    defaults: { _controller: UrbanetCvBundle:Default:voir }
     
+urbanet_cv_voir:
+    pattern:  /CV/voir/{id}
+    defaults: { _controller: UrbanetCvBundle:Default:voir, id: 0 }
+    requirements :
+      id : \d+
+      
 urbanet_cv_ajouter:
     pattern:  /CV/ajouter
     defaults: { _controller: UrbanetCvBundle:Default:ajouter }
@@ -10,17 +16,9 @@ urbanet_cv_editer:
     pattern:  /CV/editer/{id}
     defaults: { _controller: UrbanetCvBundle:Default:editer }
 
-urbanet_cv_voir:
-    pattern:  /CV/voir/{id}
-    defaults: { _controller: UrbanetCvBundle:Default:voir, id: 0 }
-    requirements :
-      id : \d+
-
 urbanet_cv_ajouter_spectacle:
-    pattern:  /CV/ajouter_spectacle/{id}
+    pattern:  /CV/ajouter_spectacle
     defaults: { _controller: UrbanetCvBundle:Default:ajouter_spectacle }
-    requirements :
-      id : \d+
 
 urbanet_cv_editer_spectacle:
     pattern:  /CV/editer_spectacle/{id}
@@ -35,10 +33,8 @@ urbanet_cv_supprimer_spectacle:
       id : \d+
 
 urbanet_cv_ajouter_formation:
-    pattern: /CV/ajouter_formation/{id}
+    pattern: /CV/ajouter_formation
     defaults: { _controller: UrbanetCvBundle:Default:ajouter_formation }
-    requirements : 
-      id : \d+
 
 urbanet_cv_editer_formation:
     pattern:  /CV/editer_formation/{id}
@@ -53,10 +49,8 @@ urbanet_cv_supprimer_formation:
       id : \d+
 
 urbanet_cv_ajouter_competence:
-    pattern: /CV/ajouter_competence/{id}
+    pattern: /CV/ajouter_competence
     defaults: { _controller: UrbanetCvBundle:Default:ajouter_competence }
-    requirements : 
-      id : \d+
 
 urbanet_cv_editer_competence:
     pattern:  /CV/editer_competence/{id}
